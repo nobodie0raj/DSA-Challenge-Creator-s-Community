@@ -42,10 +42,6 @@ Our challenge will be supported by seniors and those who have successfully inter
 
 To participate, please fill out the [Google Form](https://forms.gle/wQyQLBxoMPE7PV6s9) and get ready with the required coding platforms.
 
-## Previous Success
-
-In our previous challenge, we had over 100 students who benefited from learning competitive coding, earning certifications, and improving their LinkedIn profiles. We're aiming for even greater success this time with our focused DSA curriculum.
-
 ## Let's Get Started!
 
 Join us on this exciting journey to master DSA and take a significant step forward in your IT career. Follow this repository for updates, resources, and discussions related to the challenge.
