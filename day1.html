@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1: Introduction to Data Structures and Algorithms (DSA </title>
+     <style>
+        body {
+            background-color: #222;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+        }
+
+        .header {
+            background-color: #333; 
+            padding: 10px 0;
+            display: flex;
+            align-items: center; 
+            justify-content: center;
+            width: 100%;
+        }
+
+        .header-logo {
+            width: 120px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 39px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+            text-transform: uppercase;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            margin: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 6px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer {
+            font-size: 8px;
+            margin-top: auto;
+            margin-bottom: 13px;
+        }
+
+        .logo {
+            width: 10px;
+            height: auto;
+            margin-right: 5px;
+        }
+
+        .content {
+            text-align: left;
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+        }
+
+        h3 {
+            color: #4CAF50;
+        }
+
+        pre {
+            background-color: #444;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        code {
+            color: #4CAF50;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 1em; /* Adds a gap of one line between list items */
+        }
+
+        @media (max-width: 768px) {
+            .header-logo {
+                width: 60px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            .container {
+                margin: 10px;
+                padding: 10px;
+            }
+
+            h2 {
+                font-size: 16px;
+            }
+
+            .btn {
+                padding: 8px 16px;
+                font-size: 12px;
+                width: 100%;
+                max-width: none;
+            }
+
+            .footer {
+                font-size: 10px;
+            }
+
+            .content {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-logo {
+                width: 40px;
+            }
+
+            h1 {
+                font-size: 18px;
+            }
+
+            h2 {
+                font-size: 14px;
+            }
+
+            .btn {
+                padding: 6px 12px;
+                font-size: 10px;
+            }
+
+            .footer {
+                font-size: 8px;
+            }
+
+            .content {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="cclogo.png" alt="Logo" class="header-logo">
+         <h1> Creator's Coding Community</h1>
+    </div>
+    <div class="container">
+        <h2>Day 1: Introduction to Data Structures and Algorithms (DSA)</h2>
+        <div class="content">
+            <h3>What is a Data Structure?</h3>
+            <p>A data structure is a way to organize and store data so that we can use it efficiently. Think of it like organizing your toys or books in a way that makes them easy to find and use.</p>
+            <h3>Understanding Time Complexity</h3>
+            <p>Imagine you have a big toy box full of different toys. Sometimes, you want to find your favorite toy, and other times, you want to clean up and put all the toys in order. How long it takes to do these things depends on the number of toys you have and how you do it. This is similar to what we call <strong>time complexity</strong> in computer science.</p>
+
+            <h3>Example 1: Finding a Toy</h3>
+            <h4>Linear Search</h4>
+            <p>Imagine you are looking for a specific toy in your toy box. You start from the first toy and check each one until you find the toy you're looking for. This is called <strong>linear search</strong>.</p>
+            <ul>
+                <li>If you have 10 toys, you might have to look at up to 10 toys.</li>
+                <li>If you have 100 toys, you might have to look at up to 100 toys.</li>
+            </ul>
+            <p>The time it takes increases as the number of toys increases. We call this <strong>O(n)</strong>, where "n" is the number of toys.</p>
+            <h4>Binary Search</h4>
+            <p>Now, imagine your toys are already sorted in order, like a bookshelf. You can start in the middle and decide if you need to look to the left or right.</p>
+            <ul>
+                <li>If you have 10 toys, you might only need to check 4 toys.</li>
+                <li>If you have 100 toys, you might only need to check 7 toys.</li>
+            </ul>
+            <p>This method is much faster for large numbers of toys. We call this <strong>O(log n)</strong>.</p>
+            <h3>Common Data Structures</h3>
+            <ul>
+                <li><strong>Array</strong>: Imagine a row of lockers. Each locker can hold one item, and you can find any item by knowing its locker number (index). Example: An array of favorite fruits: ["Apple", "Banana", "Cherry"]</li>
+                <li><strong>Linked List</strong>: Think of a treasure hunt where each clue leads you to the next one. Each item (node) points to the next item in the list. Example: [1] -> [2] -> [3] -> [4]</li>
+                <li><strong>Stack</strong>: Like a stack of plates where you can only add or remove the top plate. It follows the Last In, First Out (LIFO) principle. Example: A stack of books: [Book1, Book2, Book3] (you can only take the top book)</li>
+                <li><strong>Queue</strong>: Like a line of people waiting to buy ice cream. The first person in line is served first. It follows the First In, First Out (FIFO) principle. Example: A queue of people: [Person1, Person2, Person3]</li>
+                <li><strong>Tree</strong>: Imagine a family tree where each person (node) can have children (sub-nodes). It's a hierarchical structure. Example:
+                    <pre>
+        Grandpa
+       /      \
+     Mom      Uncle
+    /  \        /  \
+You Sibling Cousin1 Cousin2
+                    </pre>
+                </li>
+                <li><strong>Graph</strong>: Think of a map with cities (nodes) and roads (edges) connecting them. It's a network of connections. Example:
+                    <pre>
+CityA --- CityB
+  |        /
+CityC --- CityD
+                    </pre>
+                </li>
+            </ul>
+            <h3>What is an Algorithm?</h3>
+            <p>An algorithm is a step-by-step process to solve a problem. It's like following a recipe to bake a cake.</p>
+            <h3>Common Algorithms</h3>
+            <ul>
+                <li><strong>Sorting</strong>: Organizing items in a certain order. Example: Arranging books from shortest to tallest. Bubble Sort: Compare each pair of adjacent items and swap them if they are in the wrong order. Repeat until the list is sorted.</li>
+                <li><strong>Searching</strong>: Finding an item in a collection of items. Example: Looking for a book in a library. Linear Search: Check each item one by one until you find what you're looking for. Binary Search: If the list is sorted, you can quickly find an item by repeatedly dividing the list in half.</li>
+                <li><strong>Traversal</strong>: Visiting all the nodes or items in a data structure. Example: Walking through all the rooms in a house. Tree Traversal: In a tree, you might visit nodes in a certain order (pre-order, in-order, post-order).</li>
+            </ul>
+            <h3>Let's Summarize</h3>
+            <p>Data Structures: Ways to organize data (arrays, linked lists, stacks, queues, trees, graphs).</p>
+            <p>Algorithms: Step-by-step instructions to solve problems (sorting, searching, traversal).</p>
+            <h3>Simple Example in Python</h3>
+            <pre><code>
+# An array of numbers
+numbers = [5, 2, 9, 1, 5, 6]
+
+# Sorting the array
+sorted_numbers = sorted(numbers)
+
+print("Original numbers:", numbers)
+print("Sorted numbers:", sorted_numbers)
+            </code></pre>
+            <p>Output:</p>
+            <pre>
+Original numbers: [5, 2, 9, 1, 5, 6]
+Sorted numbers: [1, 2, 5, 5, 6, 9]
+            </pre>
+            <h3>Simple Example in C</h3>
+            <pre><code>
+int main() {
+    int numbers[] = {5, 2, 9, 1, 5, 6};
+    int n = sizeof(numbers)/sizeof(numbers[0]);
+    int i;
+    
+    bubbleSort(numbers, n);
+    
+    printf("Sorted numbers: ");
+    for (i = 0; i < n; i++) {
+        printf("%d ", numbers[i]);
+    }
+    printf("\n");
+    return 0;
+}
+</code></pre>
+            <p>Output:</p>
+            <pre>
+Sorted numbers: 1 2 5 5 6 9
+            </pre>
+            <p>By understanding these basics, you're on your way to mastering DSA! Keep learning, practicing, and having fun with it.</p>
+        </div> <br> </br>
+
+        <a href="TechQuiz-main/index.html" class="btn">Go to Quiz Section </a>
+    </div>
+    <div class="footer"> Creator's Coding Community <img src="cclogo.png" alt="Logo" class="logo"></div>
+    <script>
+        window.addEventListener("load", function () {
+            setTimeout(function () {
+                document.querySelector(".loading-container").style.display = "none";
+                document.querySelector(".main-content").style.display = "block";
+            }, 2000); // 2 seconds
+        });
+    </script>
+</body>
+</html>
