@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2: Exploring Arrays and Linked Lists</title>
+    <style>
+        body {
+            background-color: #222;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header {
+            background-color: #333;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .header-logo {
+            width: 120px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 29px;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+
+        h2 {
+            font-size: 19px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+            text-transform: uppercase;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            margin: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 6px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer {
+            font-size: 8px;
+            margin-top: auto;
+            margin-bottom: 13px;
+        }
+
+        .logo {
+            width: 10px;
+            height: auto;
+            margin-right: 5px;
+        }
+
+        .content {
+            text-align: left;
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+        }
+
+        h3 {
+            color: #4CAF50;
+        }
+
+        pre {
+            background-color: #444;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        code {
+            color: #4CAF50;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 1em;
+        }
+   .solution {
+            display: none;
+        }
+
+        .show-btn {
+            background-color: #FFA500;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            margin: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 6px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .show-btn:hover {
+            background-color: #FF8C00;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+        @media (max-width: 768px) {
+            .header-logo {
+                width: 60px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            .container {
+                margin: 10px;
+                padding: 10px;
+            }
+
+            h2 {
+                font-size: 16px;
+            }
+
+            .btn {
+                padding: 8px 16px;
+                font-size: 12px;
+                width: 100%;
+                max-width: none;
+            }
+
+            .footer {
+                font-size: 10px;
+            }
+
+            .content {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-logo {
+                width: 40px;
+            }
+
+            h1 {
+                font-size: 18px;
+            }
+
+            h2 {
+                font-size: 14px;
+            }
+
+            .btn {
+                padding: 6px 12px;
+                font-size: 10px;
+            }
+
+            .footer {
+                font-size: 8px;
+            }
+
+            .content {
+                padding: 8px;
+            } 
+        } a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="cclogo.png" alt="Logo" class="header-logo">
+        <h1>Creator's Coding Community</h1>
+    </div>
+    <div class="container">
+        <h2>Day 2: Exploring Arrays and Linked Lists</h2>
+        <div class="content">
+            <h1>Arrays</h3>
+            <p>Arrays are like rows of lockers where each locker can store one item, and you can find any item by knowing its locker number (index).</p>
+            <h4>Example:</h4>
+            <pre>
+Fruits: ["Apple", "Banana", "Cherry", "Date", "Elderberry"]
+Index:  [0,       1,       2,       3,      4]
+            </pre>
+            <h4>Key Points:</h4>
+            <ul>
+                <li>Arrays store items in a fixed order.</li>
+                <li>Accessing an item is fast because you can directly use its index.</li>
+                <li>Inserting or deleting an item can be slow because you might need to move other items. <a href="https://www.geeksforgeeks.org/types-of-arrays/" target="_blank">Types of Arrays</a>
+                 </li>
+            </ul>
+            <h4>Simple Python Example:</h4>
+            <pre><code>
+fruits = ["Apple", "Banana", "Cherry"]
+print(fruits[1])  # Output: Banana
+            </code></pre>
+            <h4>Output:</h4>
+            <pre>
+Banana
+            </pre>
+
+            <h1>Linked Lists</h3>
+            <p>Linked lists are like a treasure hunt where each clue leads you to the next one. Each item (node) points to the next item in the list.</p>
+            <h4>Example:</h4>
+            <pre>
+Head -> [1] -> [2] -> [3] -> [4] -> None
+            </pre>
+            <h4>Key Points:</h4>
+            <ul>
+                <li>Linked lists can grow and shrink easily because each item points to the next one.</li>
+                <li>Accessing an item can be slow because you need to follow the pointers from the start.</li>
+                <li>Inserting or deleting an item is fast because you only need to change the pointers. <a href="https://www.geeksforgeeks.org/types-of-linked-list/" target="_blank">Types of Linked List</a></li>
+            </ul>
+            <h4>Simple Python Example:</h4>
+            <pre><code>
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+head = Node(1)
+second = Node(2)
+third = Node(3)
+
+head.next = second
+second.next = third
+
+# Printing the linked list
+current = head
+while current:
+    print(current.data)
+    current = current.next
+# Output: 1 2 3
+            </code></pre>
+            <h4>Output:</h4>
+            <pre>
+1
+2
+3
+            </pre>
+
+            <h3>Challenge Time!</h3>
+            <h4>Challenge 1: Create an Array</h4>
+            <p>Create an array of your favorite animals and print the third animal in the array.</p>
+            <h4>Challenge 2: Create a Linked List</h4>
+            <p>Create a linked list of numbers from 1 to 5 and print all the numbers.</p>
+
+            <h3>Solutions</h3>
+            <h4>Solution 1: Array</h4>
+            <pre><code>
+animals = ["Dog", "Cat", "Elephant", "Giraffe", "Lion"]
+print(animals[2])  # Output: Elephant
+            </code></pre>
+            <h4>Output:</h4>
+            <pre>
+Elephant
+            </pre>
+
+         <br> </br>
+
+            <h1>Simple C Program to Create and Print a Linked List with 3 Nodes</h1>
+
+            <h2>Step 1: Define the Node Structure</h2>
+            <pre><code>
+        // Define the structure for a node in the linked list
+        struct Node {
+            int data; // The data stored in the node
+            struct Node* next; // Pointer to the next node in the list
+        };
+            </code></pre>
+        
+            <h2>Step 2: Create the Nodes</h2>
+            <pre><code>
+        #include <stdio.h>
+        #include <stdlib.h>
+        
+        int main() {
+            // Create 3 nodes
+            struct Node* head = (struct Node*)malloc(sizeof(struct Node));
+            struct Node* second = (struct Node*)malloc(sizeof(struct Node));
+            struct Node* third = (struct Node*)malloc(sizeof(struct Node));
+            </code></pre>
+        
+            <h2>Step 3: Assign Data to Each Node</h2>
+            <pre><code>
+            // Assign data to each node
+            head->data = 1;    // First node data
+            second->data = 2;  // Second node data
+            third->data = 3;   // Third node data
+            </code></pre>
+        
+            <h2>Step 4: Link the Nodes Together</h2>
+            <pre><code>
+            // Link the nodes together
+            head->next = second;  // First node points to second node
+            second->next = third; // Second node points to third node
+            third->next = NULL;   // Third node is the last node, so it points to NULL
+            </code></pre>
+        
+            <h2>Step 5: Print the Linked List</h2>
+            <pre><code>
+            // Print the linked list
+            struct Node* current = head; // Start from the head node
+            while (current != NULL) {
+                printf("%d ", current->data); // Print the data of the current node
+                current = current->next; // Move to the next node
+            }
+            // Output: 1 2 3
+            </code></pre>
+        
+            <h2>Step 6: Free the Allocated Memory</h2>
+            <pre><code>
+            // Free the allocated memory for each node
+            free(head);
+            free(second);
+            free(third);
+        
+            return 0;
+        }
+            </code></pre>
+        
+            <h2>Complete Code (YAY! WE'VE LEARNED HOW TO CODE LINKED LISTS IN C): </h2>
+            <pre><code>
+        #include <stdio.h>
+        #include <stdlib.h>
+        
+        // Define the structure for a node in the linked list
+        struct Node {
+            int data; // The data stored in the node
+            struct Node* next; // Pointer to the next node in the list
+        };
+        
+        int main() {
+            // Step 1: Create 3 nodes
+            struct Node* head = (struct Node*)malloc(sizeof(struct Node));
+            struct Node* second = (struct Node*)malloc(sizeof(struct Node));
+            struct Node* third = (struct Node*)malloc(sizeof(struct Node));
+        
+            // Step 2: Assign data to each node
+            head->data = 1;    // First node data
+            second->data = 2;  // Second node data
+            third->data = 3;   // Third node data
+        
+            // Step 3: Link the nodes together
+            head->next = second;  // First node points to second node
+            second->next = third; // Second node points to third node
+            third->next = NULL;   // Third node is the last node, so it points to NULL
+        
+            // Step 4: Print the linked list
+            struct Node* current = head; // Start from the head node
+            while (current != NULL) {
+                printf("%d ", current->data); // Print the data of the current node
+                current = current->next; // Move to the next node
+            }
+            // Output: 1 2 3
+        
+            // Step 6: Free the allocated memory
+            free(head);
+            free(second);
+            free(third);
+        
+            return 0;
+        }
+            </code></pre>
+            <h3>Keep Practicing!</h3>
+            <p>Keep playing with arrays and linked lists. Try adding, removing, and accessing different items. The more you practice, the better you'll understand!</p>
+        </div> <br> </br>
+
+        <a href="TechQuiz-main/index.html" class="btn">Go to Quiz Section</a>
+    </div>
+    <div class="footer">Creator's Coding Community <img src="cclogo.png" alt="Logo" class="logo"></div>
+    <script>
+        window.addEventListener("load", function () {
+            setTimeout(function () {
+                document.querySelector(".loading-container").style.display = "none";
+                document.querySelector(".main-content").style.display = "block";
+            }, 2000); // 2 seconds
+        });
+    </script>
+</body>
+</html>
