@@ -3,7 +3,6 @@
 <head>
   <title>Tech Quiz by Competitive Community</title>
   <style>
-  
     #loader {
       position: fixed;
       top: 0;
@@ -24,7 +23,6 @@
       pointer-events: none;
     }
 
-
     .spinner {
       width: 40px;
       height: 40px;
@@ -42,7 +40,6 @@
         transform: rotate(360deg);
       }
     }
-
 
     .top-bar {
       background-color: #333;
@@ -64,25 +61,22 @@
       font-weight: bold;
       font-family: 'Brush Script MT', cursive;
       margin-right: auto;
-  margin-right: 200px; 
+      margin-right: 200px; 
     }
 
     .tagline {
       font-size: 16px;
-      color: #ccc;S
+      color: #ccc;
       font-family: Garamond, serif;
     }
 
-   
     h1 {
       text-align: center;
       color: #4caf50;
       font-size: 42px;
-font-family: Garamond, serif;
-      
+      font-family: Garamond, serif;
       margin-bottom: 20px;
     }
-
 
     #result-container {
       text-align: center;
@@ -110,27 +104,28 @@ font-family: Garamond, serif;
       color: #666;
     }
 
-#result-container .wrong-answers {
-  color:red;
+    #result-container .wrong-answers {
+      color:red;
+    }
 
-}
-#result-container .correct-answers {
-  color: rgb(49, 230, 13);}
+    #result-container .correct-answers {
+      color: rgb(49, 230, 13);
+    }
 
     #quiz-container {
-  max-width: 800px; 
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f2f2f2;
-  border-radius: 5px;
-}
+      max-width: 800px; 
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+    }
 
-   #question-container {
-  margin-bottom: 20px;
-  font-family: "Palatino Linotype", serif; 
-font-size: 1.2em;
-font-weight: bold;
-}
+    #question-container {
+      margin-bottom: 20px;
+      font-family: "Palatino Linotype", serif; 
+      font-size: 1.2em;
+      font-weight: bold;
+    }
 
     #options-container button {
       display: block;
@@ -141,8 +136,8 @@ font-weight: bold;
       border: 1px solid #ddd;
       border-radius: 3px;
       cursor: pointer;
-font-size: 1em;
-font-family: "Palatino Linotype", serif; 
+      font-size: 1em;
+      font-family: "Palatino Linotype", serif; 
     }
 
     #options-container button.correct {
@@ -176,24 +171,25 @@ font-family: "Palatino Linotype", serif;
       background-color: #45a049;
     }
 
-#timer {
-  text-align: right; 
-  margin-top: 10px; 
-  font-family: Arial, sans-serif; 
-  font-size: 14px; 
-}
+    #timer {
+      text-align: right; 
+      margin-top: 10px; 
+      font-family: Arial, sans-serif; 
+      font-size: 14px; 
+    }
 
     #result-container {
       text-align: center;
       font-weight: bold;
     }
+
+    .CodeMirror-cursor {
+      border-left: 1px solid black;
+      border-right: none;
+      width: 0;
+    }
     
-.CodeMirror-cursor {
-  border-left: 1px solid black;
-  border-right: none;
-  width: 0;
-    
- footer {
+    footer {
       background-color: #333;
       color: #fff;
       padding: 10px;
@@ -206,7 +202,6 @@ font-family: "Palatino Linotype", serif;
     footer p {
       margin: 0;
     }
-    
   </style>
 </head>
 <body>
@@ -222,7 +217,7 @@ font-family: "Palatino Linotype", serif;
       <div class="tagline">Test your tech knowledge</div>
     </div>
   </div>
-  <h1>E- Commerce Trends</h1>
+  <h1>Arrays and Types of Arrays</h1>
   <div id="quiz-container">
     <div id="question-container"></div>
     <div id="options-container"></div>
@@ -231,15 +226,8 @@ font-family: "Palatino Linotype", serif;
   </div>
   
   <script>
-
-// JavaScript to hide the loader after 2 seconds
+    // JavaScript to hide the loader after 2 seconds
     window.addEventListener('load', function() {
-      const loader = document.getElementById('loader');
-      setTimeout(function() {
-        loader.classList.add('hidden');
-      }, 1000);
-    });
-'load', function() {
       const loader = document.getElementById('loader');
       setTimeout(function() {
         loader.classList.add('hidden');
@@ -338,141 +326,118 @@ font-family: "Palatino Linotype", serif;
         timer: 30
       }
     ];
-  
-// Shuffle the questions randomly
-questions.sort(() => Math.random() - 0.5);
 
-
-
- 
-let currentQuestionIndex = 0;
+    let currentQuestionIndex = 0;
     let score = 0;
-    let timer;
+    let timeLeft = questions[currentQuestionIndex].timer;
+    let timerInterval;
 
-    const quizContainer = document.getElementById("quiz-container");
     const questionContainer = document.getElementById("question-container");
     const optionsContainer = document.getElementById("options-container");
-    const timerContainer = document.getElementById("time-left");
-    const submitButton = document.getElementById("submit-btn");
+    const timerElement = document.getElementById("time-left");
+    const submitBtn = document.getElementById("submit-btn");
 
-    function startQuiz() {
-      displayQuestion();
+    function showQuestion() {
+      const question = questions[currentQuestionIndex];
+      questionContainer.textContent = question.question;
+
+      optionsContainer.innerHTML = "";
+      question.options.forEach(option => {
+        const button = document.createElement("button");
+        button.textContent = option;
+        button.addEventListener("click", () => selectAnswer(button, option));
+        optionsContainer.appendChild(button);
+      });
+
+      timeLeft = question.timer;
+      timerElement.textContent = timeLeft;
+      clearInterval(timerInterval);
+      timerInterval = setInterval(updateTimer, 1000);
     }
 
-    function displayQuestion() {
-      const currentQuestion = questions[currentQuestionIndex];
-      questionContainer.textContent = currentQuestion.question;
-      optionsContainer.innerHTML = "";
-
-      for (let i = 0; i < currentQuestion.options.length; i++) {
-        const option = document.createElement("button");
-        option.textContent = currentQuestion.options[i];
-        option.addEventListener("click", checkAnswer);
-        optionsContainer.appendChild(option);
+    function selectAnswer(button, selectedOption) {
+      clearInterval(timerInterval);
+      const question = questions[currentQuestionIndex];
+      if (selectedOption === question.answer) {
+        score++;
+        button.classList.add("correct");
+      } else {
+        button.classList.add("wrong");
+        Array.from(optionsContainer.children).forEach(btn => {
+          if (btn.textContent === question.answer) {
+            btn.classList.add("correct");
+          }
+        });
       }
 
-      startTimer(currentQuestion.timer);
-    }
-
-    function startTimer(time) {
-      let timeLeft = time;
-      updateTimerDisplay(timeLeft);
-
-      timer = setInterval(() => {
-        timeLeft--;
-        updateTimerDisplay(timeLeft);
-
-        if (timeLeft === 0) {
-          clearInterval(timer);
-          displayNextQuestion();
+      setTimeout(() => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+          showQuestion();
+        } else {
+          endQuiz();
         }
       }, 1000);
     }
 
-    function updateTimerDisplay(timeLeft) {
-      if (timeLeft >= 0) {
-        timerContainer.textContent = timeLeft;
+    function updateTimer() {
+      timeLeft--;
+      timerElement.textContent = timeLeft;
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+          showQuestion();
+        } else {
+          endQuiz();
+        }
       }
     }
 
-    function checkAnswer(event) {
-      const selectedOption = event.target.textContent;
-      const currentQuestion = questions[currentQuestionIndex];
-
-      if (selectedOption === currentQuestion.answer) {
-        score++;
-      }
-
-      clearInterval(timer);
-      displayNextQuestion();
-    }
-
-    function displayNextQuestion() {
-      currentQuestionIndex++;
-
-      if (currentQuestionIndex < questions.length) {
-        displayQuestion();
-      } else {
-        endQuiz();
-      }
-    }
-
- 
     function endQuiz() {
-      clearInterval(timer);
-
-      const quizContainer = document.getElementById("quiz-container");
-      quizContainer.style.display = "none";
-
+      clearInterval(timerInterval);
+      questionContainer.textContent = "Quiz Completed!";
+      optionsContainer.innerHTML = "";
+      submitBtn.style.display = "none";
+      
+      // Display the score and missed questions
       const resultContainer = document.createElement("div");
       resultContainer.id = "result-container";
-
-      const correctAnswers = score;
-      const wrongAnswers = questions.length - score;
-
-      let comment;
-
-      if (score === 30) {
-        comment = "Congratulations! You scored a perfect 30/30!";
-      } else if (score >= 25) {
-        comment = "Great job! You have excellent knowledge!";
-      } else if (score >= 20) {
-        comment = "Well done! You have a solid understanding!";
-      } else if (score >= 15) {
-        comment = "Good effort! You have a good grasp of the concepts!";
-      } else if (score >= 10) {
-        comment = "Nice attempt! Keep learning to improve your knowledge!";
-      } else if (score >= 5) {
-        comment = "Not bad! You have some basic understanding!";
-      } else if (score >= 1) {
-        comment = "You can do better! Keep practicing and learning!";
-      } else {
-        comment = "Oops! Better luck next time! Keep learning!";
-      }
-
       resultContainer.innerHTML = `
-        <p>Your score: <span>${score}</span> out of <span>${questions.length}</span></p>
-        <p>Correct Answers: <span class="correct-answers">${correctAnswers}</span></p>
-        <p>Wrong Answers: <span class="wrong-answers">${wrongAnswers}</span></p>
-        <p class="comment">${comment}</p>
+        <p>Your Score: ${score} out of ${questions.length}</p>
+        <div class="comment"></div>
       `;
 
-      const parentContainer = document.getElementById("quiz-container").parentNode;
-      parentContainer.insertBefore(resultContainer, quizContainer.nextSibling);
+      if (score <= 4) {
+        resultContainer.querySelector(".comment").textContent = "Comment: Keep practicing!";
+      } else if (score <= 7) {
+        resultContainer.querySelector(".comment").textContent = "Comment: You can do better!";
+      } else if (score <= 11) {
+        resultContainer.querySelector(".comment").textContent = "Comment: Well done!";
+      } else {
+        resultContainer.querySelector(".comment").textContent = "Comment: Excellent work!";
+      }
+
+      // Display missed questions
+      const wrongAnswers = questions.filter((q, index) => q.answer !== document.querySelector(`#options-container button:nth-child(${index + 1})`).textContent);
+      if (wrongAnswers.length > 0) {
+        const wrongAnswersContainer = document.createElement("div");
+        wrongAnswersContainer.classList.add("wrong-answers");
+        wrongAnswersContainer.innerHTML = "<p>Missed Questions:</p>";
+        wrongAnswers.forEach(q => {
+          const wrongAnswer = document.createElement("p");
+          wrongAnswer.textContent = `${q.question} - Correct Answer: ${q.answer}`;
+          wrongAnswersContainer.appendChild(wrongAnswer);
+        });
+        resultContainer.appendChild(wrongAnswersContainer);
+      }
+
+      document.body.appendChild(resultContainer);
     }
 
-    window.addEventListener('load', function() {
-    const loader = document.getElementById('loader');
-    setTimeout(function() {
-      loader.classList.add('hidden');
-    }, 1000);
+    submitBtn.addEventListener("click", endQuiz);
 
-    const submitButton = document.getElementById('submit-btn');
-    submitButton.addEventListener('click', endQuiz);
-    });
-
-    startQuiz();
-    
+    showQuestion();
   </script>
 </body>
 </html>
