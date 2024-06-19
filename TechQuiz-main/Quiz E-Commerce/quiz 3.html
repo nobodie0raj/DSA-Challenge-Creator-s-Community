@@ -239,154 +239,105 @@ font-family: "Palatino Linotype", serif;
         loader.classList.add('hidden');
       }, 1000);
     });
+'load', function() {
+      const loader = document.getElementById('loader');
+      setTimeout(function() {
+        loader.classList.add('hidden');
+      }, 1000);
+    });
 
-      const questions = [
-  {
-    question: "What is the largest e-commerce company in the world by market capitalization as of 2021?",
-    options: ["A) Amazon", "B) Alibaba Group", "C) eBay Inc.", "D) Rakuten"],
-    answer: "A) Amazon",
-    timer: 30
-  },
-  {
-    question: "What is the term used to describe the process of a customer abandoning their online shopping cart before completing a purchase?",
-    options: ["A) Shopping Cart Retrieval", "B) Cart Forfeiture", "C) Shopping Cart Abandonment", "D) Cart Desertion"],
-    answer: "C) Shopping Cart Abandonment",
-    timer: 30
-  },
-  {
-    question: "In which country did the concept of 'Singles' Day' originate, which has now become one of the biggest online shopping events globally?",
-    options: ["A) China", "B) United States", "C) India", "D) Japan"],
-    answer: "A) China",
-    timer: 30
-  },
-  {
-    question: "Which e-commerce giant is known for its 'Fulfillment by Amazon' service that allows third-party sellers to store their products in Amazon's fulfillment centers?",
-    options: ["A) Amazon", "B) eBay Inc.", "C) Alibaba Group", "D) Rakuten"],
-    answer: "A) Amazon",
-    timer: 30
-  },
-  {
-    question: "What is the name of the online payment system founded by Elon Musk and later merged with X.com to become PayPal?",
-    options: ["A) XPay", "B) Confinity", "C) PayZone", "D) MoneyLink"],
-    answer: "B) Confinity",
-    timer: 30
-  },
-  {
-    question: "Which e-commerce model involves selling products directly to consumers without the need for physical retail stores?",
-    options: ["A) B2C (Business-to-Consumer)", "B) D2C (Direct-to-Consumer)", "C) C2C (Consumer-to-Consumer)", "D) B2B (Business-to-Business)"],
-    answer: "B) D2C (Direct-to-Consumer)",
-    timer: 30
-  },
-  {
-    question: "In e-commerce, what does the acronym 'B2B' stand for?",
-    options: ["A) Business-to-Business", "B) Business-to-Consumer", "C) Buyer-to-Buyer", "D) Business-to-Brand"],
-    answer: "A) Business-to-Business",
-    timer: 30
-  },
-  {
-    question: "Which social media platform introduced 'Shops,' allowing businesses to set up online stores within the platform?",
-    options: ["A) Facebook", "B) Instagram", "C) Twitter", "D) LinkedIn"],
-    answer: "A) Facebook",
-    timer: 30
-  },
-  {
-    question: "What is the practice of tailoring a website's content to specific users or groups based on their behavior and preferences?",
-    options: ["A) Customization", "B) Personalization", "C) Individualization", "D) Adaptation"],
-    answer: "B) Personalization",
-    timer: 30
-  },
-  {
-    question: "Which company is often credited with starting the flash sale model in the e-commerce industry?",
-    options: ["A) Groupon", "B) Gilt Groupe", "C) Rue La La", "D) Zulily"],
-    answer: "B) Gilt Groupe",
-    timer: 30
-  },
-  {
-    question: "In which country was Flipkart founded, one of the leading e-commerce companies in India?",
-    options: ["A) India", "B) China", "C) United States", "D) Japan"],
-    answer: "A) India",
-    timer: 30
-  },
-  {
-    question: "Name the Chinese e-commerce conglomerate founded by Jack Ma that operates various online platforms, including Taobao and Tmall.",
-    options: ["A) JD.com", "B) Baidu", "C) Alibaba Group", "D) Tencent"],
-    answer: "C) Alibaba Group",
-    timer: 30
-  },
-  {
-    question: "Which online marketplace is known for handmade and vintage products, as well as craft supplies?",
-    options: ["A) Amazon Handmade", "B) eBay Inc.", "C) Etsy", "D) Zazzle"],
-    answer: "C) Etsy",
-    timer: 30
-  },
-  {
-    question: "This American multinational technology company owns and operates eBay, one of the earliest and most well-known online auction websites.",
-    options: ["A) Amazon", "B) Alibaba Group", "C) Google", "D) eBay Inc."],
-    answer: "D) eBay Inc.",
-    timer: 30
-  },
-  {
-    question: "Which Indian digital payment platform, owned by One97 Communications, has gained widespread popularity for online transactions?",
-    options: ["A) PhonePe", "B) Paytm", "C) Google Pay", "D) MobiKwik"],
-    answer: "B) Paytm",
-    timer: 30
-  },
-  {
-    question: "Name the Japanese e-commerce company that initially started as an online bookstore but later expanded into various other product categories.",
-    options: ["A) Rakuten", "B) Zozo", "C) Mercari", "D) GMO Pepabo"],
-    answer: "A) Rakuten",
-    timer: 30
-  },
-  {
-    question: "Which online fashion retailer is famous for its 'fast fashion' approach, offering trendy and affordable clothing?",
-    options: ["A) H&M", "B) ASOS", "C) Zara", "D) Uniqlo"],
-    answer: "C) Zara",
-    timer: 30
-  },
-  {
-    question: "Name the Swedish company that provides e-commerce solutions through its platform, including online payments and shopping carts.",
-    options: ["A) Klarna", "B) Shopify", "C) Square", "D) Stripe"],
-    answer: "A) Klarna",
-    timer: 30
-  },
-  {
-    question: "Which online marketplace is known for its focus on unique and creative goods, often catering to a niche audience?",
-    options: ["A) Amazon", "B) eBay Inc.", "C) Alibaba Group", "D) Etsy"],
-    answer: "D) Etsy",
-    timer: 30
-  },
-  {
-    question: "This Chinese technology conglomerate is the parent company of AliExpress, Lazada, and several other e-commerce platforms.",
-    options: ["A) JD.com", "B) Baidu", "C) Tencent", "D) Alibaba Group"],
-    answer: "D) Alibaba Group",
-    timer: 30
-  },
-  {
-    question: "What technology is used to encrypt sensitive information during online transactions to ensure secure data transfer?",
-    options: ["A) SSL (Secure Sockets Layer)", "B) HTTP (Hypertext Transfer Protocol)", "C) XML (eXtensible Markup Language)", "D) VPN (Virtual Private Network)"],
-    answer: "A) SSL (Secure Sockets Layer)",
-    timer: 30
-  },
-  {
-    question: "Which programming language is widely used for building dynamic and interactive web applications in the e-commerce domain?",
-    options: ["A) Python", "B) Java", "C) PHP", "D) JavaScript"],
-    answer: "D) JavaScript",
-    timer: 30
-  },
-  {
-    question: "In the context of databases, what does 'ACID' stand for, representing the properties that guarantee database transactions' reliability?",
-    options: ["A) Atomicity, Consistency, Isolation, Durability", "B) Association, Commitment, Integrity, Durability", "C) Automation, Control, Integration, Documentation", "D) Access, Cache, Index, Disk"],
-    answer: "A) Atomicity, Consistency, Isolation, Durability",
-    timer: 30
-  },
-  {
-    question: "What is the term for the practice of using algorithms to analyze customer data and predict their preferences and behavior in e-commerce?",
-    options: ["A) Customization", "B) Personalization", "C) Optimization", "D) Recommender Systems"],
-    answer: "B) Personalization or Recommender Systems",
-    timer: 30
-  }
-];
-
+    const questions = [
+      {
+        question: "What is an array in programming?",
+        options: ["A) A data structure that stores a collection of items", "B) A function that performs a specific task", "C) A type of loop structure", "D) A method for sorting data"],
+        answer: "A) A data structure that stores a collection of items",
+        timer: 30
+      },
+      {
+        question: "Which of the following is a type of array in JavaScript?",
+        options: ["A) Integer Array", "B) Associative Array", "C) Hash Array", "D) Map Array"],
+        answer: "B) Associative Array",
+        timer: 30
+      },
+      {
+        question: "What is a multidimensional array?",
+        options: ["A) An array with a single row", "B) An array with multiple rows and columns", "C) An array that can only hold strings", "D) An array that cannot be resized"],
+        answer: "B) An array with multiple rows and columns",
+        timer: 30
+      },
+      {
+        question: "How do you declare an array in Python?",
+        options: ["A) arr = [1, 2, 3]", "B) array arr = new Array()", "C) arr = Array(1, 2, 3)", "D) arr = {1, 2, 3}"],
+        answer: "A) arr = [1, 2, 3]",
+        timer: 30
+      },
+      {
+        question: "Which method is used to add an element to the end of an array in JavaScript?",
+        options: ["A) append()", "B) push()", "C) add()", "D) insert()"],
+        answer: "B) push()",
+        timer: 30
+      },
+      {
+        question: "What is the default value of elements in an integer array in Java?",
+        options: ["A) null", "B) 1", "C) 0", "D) undefined"],
+        answer: "C) 0",
+        timer: 30
+      },
+      {
+        question: "Which of the following is a method to remove the last element from an array in JavaScript?",
+        options: ["A) pop()", "B) remove()", "C) delete()", "D) shift()"],
+        answer: "A) pop()",
+        timer: 30
+      },
+      {
+        question: "What is a dynamic array?",
+        options: ["A) An array with a fixed size", "B) An array that can grow or shrink in size", "C) An array that stores only strings", "D) An array that cannot be modified"],
+        answer: "B) An array that can grow or shrink in size",
+        timer: 30
+      },
+      {
+        question: "How do you access the first element of an array in C++?",
+        options: ["A) array[0]", "B) array[1]", "C) array.first()", "D) array.get(0)"],
+        answer: "A) array[0]",
+        timer: 30
+      },
+      {
+        question: "Which function is used to sort an array in Python?",
+        options: ["A) sortArray()", "B) sorted()", "C) sort()", "D) order()"],
+        answer: "B) sorted()",
+        timer: 30
+      },
+      {
+        question: "What is a jagged array?",
+        options: ["A) An array with different numbers of columns in each row", "B) An array with all elements having the same size", "C) An array that can only hold numbers", "D) An array that is always sorted"],
+        answer: "A) An array with different numbers of columns in each row",
+        timer: 30
+      },
+      {
+        question: "How do you initialize an empty array in JavaScript?",
+        options: ["A) let arr = [];", "B) let arr = ();", "C) let arr = {};","D) let arr = Array();"],
+        answer: "A) let arr = [];",
+        timer: 30
+      },
+      {
+        question: "What is the index of the last element in an array of length 10?",
+        options: ["A) 9", "B) 10", "C) 11", "D) 8"],
+        answer: "A) 9",
+        timer: 30
+      },
+      {
+        question: "How do you find the length of an array in Java?",
+        options: ["A) array.size()", "B) array.length", "C) array.count()", "D) array.length()"],
+        answer: "B) array.length",
+        timer: 30
+      },
+      {
+        question: "Which type of array is used to store elements of different data types in Python?",
+        options: ["A) Homogeneous array", "B) Heterogeneous array", "C) Multidimensional array", "D) One-dimensional array"],
+        answer: "B) Heterogeneous array",
+        timer: 30
+      }
+    ];
   
 // Shuffle the questions randomly
 questions.sort(() => Math.random() - 0.5);
