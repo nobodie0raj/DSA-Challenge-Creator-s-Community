@@ -3,7 +3,6 @@
 <head>
   <title>Tech Quiz by Competitive Community</title>
   <style>
-  
     #loader {
       position: fixed;
       top: 0;
@@ -24,7 +23,6 @@
       pointer-events: none;
     }
 
-
     .spinner {
       width: 40px;
       height: 40px;
@@ -42,7 +40,6 @@
         transform: rotate(360deg);
       }
     }
-
 
     .top-bar {
       background-color: #333;
@@ -64,25 +61,22 @@
       font-weight: bold;
       font-family: 'Brush Script MT', cursive;
       margin-right: auto;
-  margin-right: 200px; 
+      margin-right: 200px; 
     }
 
     .tagline {
       font-size: 16px;
-      color: #ccc;S
+      color: #ccc;
       font-family: Garamond, serif;
     }
 
-   
     h1 {
       text-align: center;
       color: #4caf50;
       font-size: 42px;
-font-family: Garamond, serif;
-      
+      font-family: Garamond, serif;
       margin-bottom: 20px;
     }
-
 
     #result-container {
       text-align: center;
@@ -110,27 +104,28 @@ font-family: Garamond, serif;
       color: #666;
     }
 
-#result-container .wrong-answers {
-  color:red;
+    #result-container .wrong-answers {
+      color: red;
+    }
 
-}
-#result-container .correct-answers {
-  color: rgb(49, 230, 13);}
+    #result-container .correct-answers {
+      color: rgb(49, 230, 13);
+    }
 
     #quiz-container {
-  max-width: 800px; 
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f2f2f2;
-  border-radius: 5px;
-}
+      max-width: 800px; 
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+    }
 
-   #question-container {
-  margin-bottom: 20px;
-  font-family: "Palatino Linotype", serif; 
-font-size: 1.2em;
-font-weight: bold;
-}
+    #question-container {
+      margin-bottom: 20px;
+      font-family: "Palatino Linotype", serif; 
+      font-size: 1.2em;
+      font-weight: bold;
+    }
 
     #options-container button {
       display: block;
@@ -141,8 +136,8 @@ font-weight: bold;
       border: 1px solid #ddd;
       border-radius: 3px;
       cursor: pointer;
-font-size: 1em;
-font-family: "Palatino Linotype", serif; 
+      font-size: 1em;
+      font-family: "Palatino Linotype", serif; 
     }
 
     #options-container button.correct {
@@ -176,24 +171,14 @@ font-family: "Palatino Linotype", serif;
       background-color: #45a049;
     }
 
-#timer {
-  text-align: right; 
-  margin-top: 10px; 
-  font-family: Arial, sans-serif; 
-  font-size: 14px; 
-}
-
-    #result-container {
-      text-align: center;
-      font-weight: bold;
+    #timer {
+      text-align: right; 
+      margin-top: 10px; 
+      font-family: Arial, sans-serif; 
+      font-size: 14px; 
     }
-    
-.CodeMirror-cursor {
-  border-left: 1px solid black;
-  border-right: none;
-  width: 0;
-    
- footer {
+
+    footer {
       background-color: #333;
       color: #fff;
       padding: 10px;
@@ -206,12 +191,11 @@ font-family: "Palatino Linotype", serif;
     footer p {
       margin: 0;
     }
-    
   </style>
 </head>
 <body>
 
- <!-- Page loading animation -->
+  <!-- Page loading animation -->
   <div id="loader">
     <div class="spinner"></div>
   </div>
@@ -231,269 +215,296 @@ font-family: "Palatino Linotype", serif;
   </div>
   
   <script>
-
-// JavaScript to hide the loader after 2 seconds
+    // JavaScript to hide the loader after 2 seconds
     window.addEventListener('load', function() {
       const loader = document.getElementById('loader');
       setTimeout(function() {
         loader.classList.add('hidden');
       }, 1000);
     });
-const questions = [
-  {
-    question: "What is the term for the business model where consumers name their own price for a product or service in an online auction-like setting?",
-    options: ["A) Bidding Commerce", "B) Custom Price Model", "C) Name Your Own Price (NYOP)", "D) Flexible Pricing"],
-    answer: "C) Name Your Own Price (NYOP)",
-    timer: 30
-  },
-  {
-    question: "Which e-commerce trend focuses on using social media platforms to directly sell products to consumers without them leaving the platform?",
-    options: ["A) Social Selling", "B) Direct-to-Consumer (D2C)", "C) In-Platform Sales", "D) Social Commerce"],
-    answer: "D) Social Commerce",
-    timer: 30
-  },
-  {
-    question: "In the context of logistics, what does 'last-mile delivery' refer to in the e-commerce industry?",
-    options: ["A) Delivery of products to the customer's doorstep", "B) Transportation of goods from the warehouse to the local distribution center", "C) Shipping products to international customers", "D) Final delivery from the manufacturer to the retailer"],
-    answer: "A) Delivery of products to the customer's doorstep",
-    timer: 30
-  },
-  {
-    question: "Name the popular e-commerce company that started as a subscription-based service offering shoes and expanded into other product categories.",
-    options: ["A) Zappos", "B) ShoeDazzle", "C) FootwearFrenzy", "D) SoleSubscriptions"],
-    answer: "B) ShoeDazzle",
-    timer: 30
-  },
-  {
-    question: "What is the term for the practice of offering free shipping on all or certain orders to attract customers and increase sales?",
-    options: ["A) Shipment Bargain", "B) Zero Cost Shipping", "C) Free Delivery", "D) Free Shipping"],
-    answer: "D) Free Shipping",
-    timer: 30
-  },
-  {
-    question: "In which region did the concept of 'Black Friday' sales events originate, which is now a significant event for e-commerce globally?",
-    options: ["A) Europe", "B) United States", "C) Asia", "D) South America"],
-    answer: "B) United States",
-    timer: 30
-  },
-  {
-    question: "Which e-commerce company gained popularity for its flash-sale model, where products are available at deep discounts for a limited time?",
-    options: ["A) Zulily", "B) Groupon", "C) Rue La La", "D) LivingSocial"],
-    answer: "B) Groupon",
-    timer: 30
-  },
-  {
-    question: "What is the process of selling products through online influencers who promote them to their followers on social media called?",
-    options: ["A) Social Endorsement", "B) Digital Influence Marketing", "C) Influencer Advertising", "D) Influencer Marketing"],
-    answer: "D) Influencer Marketing",
-    timer: 30
-  },
-  {
-    question: "Which online marketplace is known for its focus on handmade and vintage items and restricts the sale of mass-produced goods?",
-    options: ["A) Amazon Handmade", "B) eBay Inc.", "C) Etsy", "D) Zazzle"],
-    answer: "C) Etsy",
-    timer: 30
-  },
-  {
-    question: "Which emerging technology is expected to revolutionize the e-commerce industry by creating more immersive and interactive shopping experiences?",
-    options: ["A) Artificial Intelligence (AI)", "B) Blockchain", "C) Virtual Reality (VR) and Augmented Reality (AR)", "D) Internet of Things (IoT)"],
-    answer: "C) Virtual Reality (VR) and Augmented Reality (AR)",
-    timer: 30
-  },
-  {
-    question: "Name the American multinational company that is a leader in cloud computing, artificial intelligence, and e-commerce.",
-    options: ["A) Apple", "B) Microsoft", "C) Amazon", "D) Google"],
-    answer: "C) Amazon",
-    timer: 30
-  },
-  {
-    question: "Which Indian e-commerce company, founded by Kunal Bahl and Rohit Bansal, is known for its wide range of products and discount offers?",
-    options: ["A) Myntra", "B) Snapdeal", "C) Flipkart", "D) Paytm Mall"],
-    answer: "B) Snapdeal",
-    timer: 30
-  },
-  {
-    question: "This Chinese technology company owns and operates WeChat, a popular messaging app, and has a significant presence in e-commerce.",
-    options: ["A) Alibaba Group", "B) Baidu", "C) Tencent", "D) JD.com"],
-    answer: "C) Tencent",
-    timer: 30
-  },
-  {
-    question: "Name the fashion e-commerce company that allows customers to rent clothing and accessories for a specific period rather than purchasing them.",
-    options: ["A) Rent the Runway", "B) FashionHire", "C) Glam Garb Rentals", "D) Couture Lease"],
-    answer: "A) Rent the Runway",
-    timer: 30
-  },
-  {
-    question: "Which online marketplace is known for its focus on electronics and tech gadgets, and it is one of the largest e-commerce companies in Japan?",
-    options: ["A) Rakuten", "B) Mercari", "C) Yahoo! Japan Shopping", "D) Bic Camera"],
-    answer: "A) Rakuten",
-    timer: 30
-  },
-  {
-    question: "Name the South Korean e-commerce company that has rapidly grown and competes with major players like Amazon and Alibaba.",
-    options: ["A) Coupang", "B) 11st", "C) Gmarket", "D) Lotte"],
-    answer: "A) Coupang",
-    timer: 30
-  },
-  {
-    question: "This American multinational company is known for its online marketplace that connects buyers and sellers in various product categories.",
-    options: ["A) eBay", "B) Etsy", "C) Overstock", "D) Walmart"],
-    answer: "A) eBay",
-    timer: 30
-  },
-  {
-    question: "Which fashion e-commerce platform primarily targets the luxury and high-end fashion market?",
-    options: ["A) ASOS", "B) Farfetch", "C) Zara", "D) Net-a-Porter"],
-    answer: "B) Farfetch",
-    timer: 30
-  },
-  {
-    question: "Name the German e-commerce company that operates localized online marketplaces in several European countries.",
-    options: ["A) Zalando", "B) Otto", "C) Bonprix", "D) Amazon Pantry"],
-    answer: "A) Zalando",
-    timer: 30
-  },
-  {
-    question: "This Indian e-commerce platform, founded by V.S.S. Mani, focuses on providing online listings and information about businesses.",
-    options: ["A) Justdial", "B) IndiaMART", "C) Sulekha", "D) TradeIndia"],
-    answer: "A) Justdial",
-    timer: 30
-  }
-];
-// Shuffle the questions randomly
-questions.sort(() => Math.random() - 0.5);
 
-
- 
-let currentQuestionIndex = 0;
-    let score = 0;
-    let timer;
-
-    const quizContainer = document.getElementById("quiz-container");
-    const questionContainer = document.getElementById("question-container");
-    const optionsContainer = document.getElementById("options-container");
-    const timerContainer = document.getElementById("time-left");
-    const submitButton = document.getElementById("submit-btn");
-
-    function startQuiz() {
-      displayQuestion();
-    }
-
-    function displayQuestion() {
-      const currentQuestion = questions[currentQuestionIndex];
-      questionContainer.textContent = currentQuestion.question;
-      optionsContainer.innerHTML = "";
-
-      for (let i = 0; i < currentQuestion.options.length; i++) {
-        const option = document.createElement("button");
-        option.textContent = currentQuestion.options[i];
-        option.addEventListener("click", checkAnswer);
-        optionsContainer.appendChild(option);
+    const questions = [
+      {
+        question: "Which method is used to find a substring within a string in JavaScript?",
+        options: ["A) search()", "B) find()", "C) getSubString()", "D) locate()"],
+        answer: "A) search()",
+        timer: 30
+      },
+      {
+        question: "What is the output of 'substring' method in JavaScript?",
+        options: ["A) Returns a string", "B) Returns an array", "C) Returns a boolean", "D) Returns a number"],
+        answer: "A) Returns a string",
+        timer: 30
+      },
+      {
+        question: "What will 'abcde'.substring(1, 4) return?",
+        options: ["A) 'abcd'", "B) 'abc'", "C) 'bcd'", "D) 'bcde'"],
+        answer: "C) 'bcd'",
+        timer: 30
+      },
+      {
+        question: "What does the 'slice' method do in the context of strings in JavaScript?",
+        options: ["A) Splits a string into an array", "B) Extracts a part of a string", "C) Replaces part of a string", "D) Joins two strings"],
+        answer: "B) Extracts a part of a string",
+        timer: 30
+      },
+      {
+        question: "How do you find the length of a string in JavaScript?",
+        options: ["A) .size()", "B) .count()", "C) .length()", "D) .length"],
+        answer: "D) .length",
+        timer: 30
+      },
+      {
+        question: "Which method would you use to check if a string contains a specific substring in JavaScript?",
+        options: ["A) includes()", "B) contains()", "C) has()", "D) finds()"],
+        answer: "A) includes()",
+        timer: 30
+      },
+      {
+        question: "What does the method 'charAt' do in JavaScript?",
+        options: ["A) Returns the character at a specific index", "B) Returns the ASCII value of a character", "C) Changes a character at a specific index", "D) Removes a character at a specific index"],
+        answer: "A) Returns the character at a specific index",
+        timer: 30
+      },
+      {
+        question: "In JavaScript, what is the result of 'abcdef'.substring(2)?",
+        options: ["A) 'ab'", "B) 'abcdef'", "C) 'cdef'", "D) 'abcd'"],
+        answer: "C) 'cdef'",
+        timer: 30
+      },
+      {
+        question: "What does the 'indexOf' method return if the substring is not found?",
+        options: ["A) -1", "B) 0", "C) null", "D) undefined"],
+        answer: "A) -1",
+        timer: 30
+      },
+      {
+        question: "Which method can be used to replace part of a string in JavaScript?",
+        options: ["A) replace()", "B) switch()", "C) modify()", "D) change()"],
+        answer: "A) replace()",
+        timer: 30
+      },
+      {
+        question: "What does the 'concat' method do in JavaScript?",
+        options: ["A) Joins two or more strings", "B) Splits a string into an array", "C) Extracts a part of a string", "D) Reverses a string"],
+        answer: "A) Joins two or more strings",
+        timer: 30
+      },
+      {
+        question: "In JavaScript, what does the 'toUpperCase' method do?",
+        options: ["A) Converts a string to uppercase", "B) Converts a string to lowercase", "C) Splits a string into an array", "D) Reverses a string"],
+        answer: "A) Converts a string to uppercase",
+        timer: 30
+      },
+      {
+        question: "How can you find the position of the first occurrence of a substring in a string in JavaScript?",
+        options: ["A) indexOf()", "B) positionOf()", "C) findIndex()", "D) locate()"],
+        answer: "A) indexOf()",
+        timer: 30
+      },
+      {
+        question: "What will the 'split' method return in JavaScript?",
+        options: ["A) An array", "B) A string", "C) A boolean", "D) A number"],
+        answer: "A) An array",
+        timer: 30
+      },
+      {
+        question: "Which method can be used to join elements of an array into a string in JavaScript?",
+        options: ["A) join()", "B) concat()", "C) merge()", "D) glue()"],
+        answer: "A) join()",
+        timer: 30
+      },
+      // Adding new questions for the second category
+      {
+        question: "What is a substring?",
+        options: ["A) A part of a string", "B) A type of array", "C) A string within an array", "D) A numeric value"],
+        answer: "A) A part of a string",
+        timer: 30
+      },
+      {
+        question: "What is a subsequence?",
+        options: ["A) A sequence derived by deleting some elements without changing the order of the remaining elements", "B) A part of a string", "C) A reversed string", "D) A numeric value"],
+        answer: "A) A sequence derived by deleting some elements without changing the order of the remaining elements",
+        timer: 30
+      },
+      {
+        question: "Is 'abc' a substring of 'abcdef'?",
+        options: ["A) Yes", "B) No"],
+        answer: "A) Yes",
+        timer: 30
+      },
+      {
+        question: "Is 'ace' a subsequence of 'abcdef'?",
+        options: ["A) Yes", "B) No"],
+        answer: "A) Yes",
+        timer: 30
+      },
+      {
+        question: "Which method checks if a string starts with a specific substring in JavaScript?",
+        options: ["A) startsWith()", "B) beginsWith()", "C) hasPrefix()", "D) starts()"],
+        answer: "A) startsWith()",
+        timer: 30
+      },
+      {
+        question: "How do you check if a string ends with a specific substring in JavaScript?",
+        options: ["A) endsWith()", "B) finishesWith()", "C) hasSuffix()", "D) ends()"],
+        answer: "A) endsWith()",
+        timer: 30
+      },
+      {
+        question: "What is the difference between 'substring' and 'substr' in JavaScript?",
+        options: ["A) 'substring' takes two indices, 'substr' takes an index and a length", "B) 'substr' is faster", "C) There is no difference", "D) 'substr' is deprecated"],
+        answer: "A) 'substring' takes two indices, 'substr' takes an index and a length",
+        timer: 30
+      },
+      {
+        question: "Which method can be used to trim whitespace from the beginning and end of a string in JavaScript?",
+        options: ["A) trim()", "B) strip()", "C) cut()", "D) crop()"],
+        answer: "A) trim()",
+        timer: 30
+      },
+      {
+        question: "What will 'abc'.substring(1) return?",
+        options: ["A) 'bc'", "B) 'ab'", "C) 'abc'", "D) 'a'"],
+        answer: "A) 'bc'",
+        timer: 30
+      },
+      {
+        question: "How do you convert a string to an array of characters in JavaScript?",
+        options: ["A) split('')", "B) Array.from()", "C) Both A and B", "D) Neither A nor B"],
+        answer: "C) Both A and B",
+        timer: 30
+      },
+      {
+        question: "What is the output of 'abcdef'.substr(2, 3)?",
+        options: ["A) 'abc'", "B) 'cde'", "C) 'def'", "D) 'abcd'"],
+        answer: "B) 'cde'",
+        timer: 30
+      },
+      {
+        question: "How do you check if a string contains a specific word in JavaScript?",
+        options: ["A) includes()", "B) indexOf()", "C) search()", "D) All of the above"],
+        answer: "D) All of the above",
+        timer: 30
+      },
+      {
+        question: "Is 'abc' a subsequence of 'aabbcc'?",
+        options: ["A) Yes", "B) No"],
+        answer: "A) Yes",
+        timer: 30
+      },
+      {
+        question: "Which method is used to compare two strings in JavaScript?",
+        options: ["A) localeCompare()", "B) compare()", "C) equals()", "D) match()"],
+        answer: "A) localeCompare()",
+        timer: 30
       }
+    ];
 
-      startTimer(currentQuestion.timer);
-    }
+    let currentQuestionIndex = 0;
+    let correctAnswers = 0;
+    let wrongAnswers = 0;
+    let timerInterval;
+    const totalTime = questions.reduce((sum, question) => sum + question.timer, 0);
+    let timeLeft = totalTime;
 
-    function startTimer(time) {
-      let timeLeft = time;
-      updateTimerDisplay(timeLeft);
+    function loadQuestion() {
+      clearInterval(timerInterval); 
 
-      timer = setInterval(() => {
-        timeLeft--;
-        updateTimerDisplay(timeLeft);
+      const questionContainer = document.getElementById('question-container');
+      const optionsContainer = document.getElementById('options-container');
 
-        if (timeLeft === 0) {
-          clearInterval(timer);
-          displayNextQuestion();
+      questionContainer.innerHTML = '';
+      optionsContainer.innerHTML = '';
+
+      const question = questions[currentQuestionIndex];
+
+      questionContainer.innerHTML = `<p>${question.question}</p>`;
+      question.options.forEach(option => {
+        const button = document.createElement('button');
+        button.innerText = option;
+        button.addEventListener('click', () => selectOption(button, question.answer));
+        optionsContainer.appendChild(button);
+      });
+
+      const questionTimeLeft = question.timer; 
+      document.getElementById('time-left').innerText = timeLeft;
+
+      timerInterval = setInterval(() => {
+        if (timeLeft > 0) {
+          timeLeft--;
+          document.getElementById('time-left').innerText = timeLeft;
+        } else {
+          clearInterval(timerInterval);
+          currentQuestionIndex++;
+          if (currentQuestionIndex < questions.length) {
+            loadQuestion();
+          } else {
+            showResult();
+          }
         }
       }, 1000);
     }
 
-    function updateTimerDisplay(timeLeft) {
-      if (timeLeft >= 0) {
-        timerContainer.textContent = timeLeft;
-      }
-    }
+    function selectOption(button, correctAnswer) {
+      const optionsContainer = document.getElementById('options-container');
+      const selectedAnswer = button.innerText;
 
-    function checkAnswer(event) {
-      const selectedOption = event.target.textContent;
-      const currentQuestion = questions[currentQuestionIndex];
+      Array.from(optionsContainer.children).forEach(optionButton => {
+        optionButton.disabled = true;
+        if (optionButton.innerText === correctAnswer) {
+          optionButton.classList.add('correct');
+        } else {
+          optionButton.classList.add('wrong');
+        }
+      });
 
-      if (selectedOption === currentQuestion.answer) {
-        score++;
-      }
-
-      clearInterval(timer);
-      displayNextQuestion();
-    }
-
-    function displayNextQuestion() {
-      currentQuestionIndex++;
-
-      if (currentQuestionIndex < questions.length) {
-        displayQuestion();
+      if (selectedAnswer === correctAnswer) {
+        correctAnswers++;
       } else {
-        endQuiz();
+        wrongAnswers++;
       }
+
+      setTimeout(() => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+          loadQuestion();
+        } else {
+          showResult();
+        }
+      }, 1000);
     }
 
- 
-    function endQuiz() {
-      clearInterval(timer);
+    function showResult() {
+      clearInterval(timerInterval); 
 
-      const quizContainer = document.getElementById("quiz-container");
-      quizContainer.style.display = "none";
-
-      const resultContainer = document.createElement("div");
-      resultContainer.id = "result-container";
-
-      const correctAnswers = score;
-      const wrongAnswers = questions.length - score;
-
-      let comment;
-
-      if (score === 30) {
-        comment = "Congratulations! You scored a perfect 30/30!";
-      } else if (score >= 25) {
-        comment = "Great job! You have excellent knowledge!";
-      } else if (score >= 20) {
-        comment = "Well done! You have a solid understanding!";
-      } else if (score >= 15) {
-        comment = "Good effort! You have a good grasp of the concepts!";
-      } else if (score >= 10) {
-        comment = "Nice attempt! Keep learning to improve your knowledge!";
-      } else if (score >= 5) {
-        comment = "Not bad! You have some basic understanding!";
-      } else if (score >= 1) {
-        comment = "You can do better! Keep practicing and learning!";
-      } else {
-        comment = "Oops! Better luck next time! Keep learning!";
-      }
-
-      resultContainer.innerHTML = `
-        <p>Your score: <span>${score}</span> out of <span>${questions.length}</span></p>
-        <p>Correct Answers: <span class="correct-answers">${correctAnswers}</span></p>
-        <p>Wrong Answers: <span class="wrong-answers">${wrongAnswers}</span></p>
-        <p class="comment">${comment}</p>
+      const quizContainer = document.getElementById('quiz-container');
+      quizContainer.innerHTML = `
+        <div id="result-container">
+          <p>Correct Answers: <span class="correct-answers">${correctAnswers}</span></p>
+          <p>Wrong Answers: <span class="wrong-answers">${wrongAnswers}</span></p>
+          <p class="comment">${getComment(correctAnswers)}</p>
+        </div>
       `;
-
-      const parentContainer = document.getElementById("quiz-container").parentNode;
-      parentContainer.insertBefore(resultContainer, quizContainer.nextSibling);
     }
 
-    window.addEventListener('load', function() {
-    const loader = document.getElementById('loader');
-    setTimeout(function() {
-      loader.classList.add('hidden');
-    }, 1000);
+    function getComment(score) {
+      if (score === questions.length) {
+        return "Excellent! You got all the answers right!";
+      } else if (score > questions.length / 2) {
+        return "Good job! You got more than half of the answers right!";
+      } else {
+        return "You can do better! Keep practicing!";
+      }
+    }
 
-    const submitButton = document.getElementById('submit-btn');
-    submitButton.addEventListener('click', endQuiz);
-    });
+    document.getElementById('submit-btn').addEventListener('click', showResult);
 
-    startQuiz();
-    
+    loadQuestion();
   </script>
+
+  <footer>
+    <p>Contact us: competitive.community@example.com</p>
+  </footer>
 </body>
 </html>
