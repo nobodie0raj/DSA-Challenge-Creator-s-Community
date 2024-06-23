@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> Technology Awareness </title>
+  <title> Stack Implementation </title>
   <style>
   
     #loader {
@@ -218,11 +218,11 @@ font-family: "Palatino Linotype", serif;
 
   <div class="top-bar">
     <div class="top-bar-inner">
-      <div class="logo">@CompetitiveCommunity</div>
+      <div class="logo">@CreatorsCommunity</div>
       <div class="tagline">Test your tech knowledge</div>
     </div>
   </div>
-  <h1>TechQuiz- Technology Awareness </h1>
+  <h1>Implementation of Stack </h1>
   <div id="quiz-container">
     <div id="question-container"></div>
     <div id="options-container"></div>
@@ -242,150 +242,127 @@ font-family: "Palatino Linotype", serif;
 
 const questions = [
   {
-    question: "Name the search engine developed by Microsoft and a competitor to Google Search.",
-    options: ["A) Yahoo", "B) Bing", "C) DuckDuckGo", "D) Ask.com"],
-    answer: "B) Bing",
+    question: "What is a stack in computer science?",
+    options: ["A) A type of data structure that follows FIFO principle", "B) A type of data structure that follows LIFO principle", "C) A type of data structure that follows LILO principle", "D) A type of data structure that follows FILO principle"],
+    answer: "B) A type of data structure that follows LIFO principle",
     timer: 30
   },
   {
-    question: "Which company is known for its consumer electronics, smartphones, tablets, and smartwatches, and is headquartered in Cupertino, California?",
-    options: ["A) Microsoft", "B) Samsung", "C) Apple Inc.", "D) Sony"],
-    answer: "C) Apple Inc.",
+    question: "Which operation adds an element to the top of the stack?",
+    options: ["A) Push", "B) Pop", "C) Peek", "D) Insert"],
+    answer: "A) Push",
     timer: 30
   },
   {
-    question: "What is the term for a self-driving vehicle that uses advanced sensors and AI algorithms to navigate without human intervention?",
-    options: ["A) Autonomous Car", "B) Self-Driving Car", "C) Driverless Vehicle", "D) Autonomous Vehicle"],
-    answer: "D) Autonomous Vehicle",
+    question: "Which operation removes an element from the top of the stack?",
+    options: ["A) Push", "B) Pop", "C) Peek", "D) Delete"],
+    answer: "B) Pop",
     timer: 30
   },
   {
-    question: "Name the virtual assistant developed by Amazon, which powers devices like Echo and Alexa-enabled smart speakers.",
-    options: ["A) Siri", "B) Google Assistant", "C) Cortana", "D) Alexa"],
-    answer: "D) Alexa",
+    question: "What does the 'Peek' operation do in a stack?",
+    options: ["A) Adds an element to the top of the stack", "B) Removes an element from the top of the stack", "C) Returns the element at the top of the stack without removing it", "D) Returns the size of the stack"],
+    answer: "C) Returns the element at the top of the stack without removing it",
     timer: 30
   },
   {
-    question: "Which technology company is behind the development of the Windows operating system?",
-    options: ["A) Google", "B) Microsoft", "C) Apple Inc.", "D) IBM"],
-    answer: "B) Microsoft",
+    question: "How is a stack typically implemented in Python?",
+    options: ["A) Using a list", "B) Using a dictionary", "C) Using a set", "D) Using a tuple"],
+    answer: "A) Using a list",
     timer: 30
   },
   {
-    question: "What is the cloud computing service offered by Google that provides a platform for developing, deploying, and scaling applications?",
-    options: ["A) Google Cloud Platform (GCP)", "B) Microsoft Azure", "C) Amazon Web Services (AWS)", "D) Google App Engine"],
-    answer: "D) Google App Engine",
+    question: "What is the time complexity of the push operation in a stack implemented using an array?",
+    options: ["A) O(1)", "B) O(n)", "C) O(log n)", "D) O(n^2)"],
+    answer: "A) O(1)",
     timer: 30
   },
   {
-    question: "Name the electric vehicle manufacturer founded by Elon Musk known for its electric cars and renewable energy products.",
-    options: ["A) Ford", "B) General Motors (GM)", "C) Tesla, Inc.", "D) Volkswagen"],
-    answer: "C) Tesla, Inc.",
+    question: "In C, which data structure is commonly used to implement a stack?",
+    options: ["A) Array", "B) Linked List", "C) Tree", "D) Graph"],
+    answer: "A) Array",
     timer: 30
   },
   {
-    question: "Which company is known for its social media platform that allows users to share photos and videos and is now owned by Facebook?",
-    options: ["A) Twitter", "B) Pinterest", "C) Snapchat", "D) Instagram"],
-    answer: "D) Instagram",
+    question: "What is the main disadvantage of implementing a stack using an array in C?",
+    options: ["A) Fixed size", "B) Dynamic resizing", "C) Slow access time", "D) Complex syntax"],
+    answer: "A) Fixed size",
     timer: 30
   },
   {
-    question: "What is the name of the popular video-sharing platform that allows users to upload and view short-form videos?",
-    options: ["A) YouTube", "B) TikTok", "C) Vimeo", "D) Dailymotion"],
-    answer: "B) TikTok",
+    question: "In a stack implemented using a linked list, which pointer is used to keep track of the top element?",
+    options: ["A) Head", "B) Tail", "C) Top", "D) End"],
+    answer: "C) Top",
     timer: 30
   },
   {
-    question: "Which company, co-founded by Bill Gates, is one of the world's largest technology companies, offering software, hardware, and services?",
-    options: ["A) Apple Inc.", "B) Amazon", "C) Google", "D) Microsoft Corporation"],
-    answer: "D) Microsoft Corporation",
+    question: "Which of the following is not a common stack operation?",
+    options: ["A) Push", "B) Pop", "C) Enqueue", "D) Peek"],
+    answer: "C) Enqueue",
     timer: 30
   },
   {
-    question: "Name the technology that combines the digital and physical worlds to provide real-time information and interactivity in a user's environment.",
-    options: ["A) Virtual Reality (VR)", "B) Augmented Reality (AR)", "C) Mixed Reality (MR)", "D) Extended Reality (XR)"],
-    answer: "B) Augmented Reality (AR)",
+    question: "In Python, how do you remove the top element from a stack implemented using a list?",
+    options: ["A) list.push()", "B) list.pop()", "C) list.remove()", "D) list.delete()"],
+    answer: "B) list.pop()",
     timer: 30
   },
   {
-    question: "Which technology allows users to experience computer-generated environments that simulate a physical presence in a virtual world?",
-    options: ["A) Virtual Reality (VR)", "B) Augmented Reality (AR)", "C) Mixed Reality (MR)", "D) Extended Reality (XR)"],
-    answer: "A) Virtual Reality (VR)",
+    question: "How can you check if a stack is empty in Python?",
+    options: ["A) len(stack) == 0", "B) stack.is_empty()", "C) stack == None", "D) stack.size() == 0"],
+    answer: "A) len(stack) == 0",
     timer: 30
   },
   {
-    question: "What is the process of analyzing vast amounts of data to identify patterns, trends, and insights, often used in business and research?",
-    options: ["A) Data Analysis", "B) Data Mining", "C) Big Data Analytics", "D) Machine Learning"],
-    answer: "C) Big Data Analytics",
+    question: "What is the purpose of a stack pointer?",
+    options: ["A) To point to the first element in the stack", "B) To point to the last element in the stack", "C) To keep track of the current position in the stack", "D) To keep track of the stack's maximum capacity"],
+    answer: "C) To keep track of the current position in the stack",
     timer: 30
   },
   {
-    question: "Name the technology that uses a person's unique physical or behavioral traits for authentication, such as fingerprint or facial recognition.",
-    options: ["A) Biometric Authentication", "B) Two-Factor Authentication (2FA)", "C) Identity Verification", "D) Multi-Factor Authentication (MFA)"],
-    answer: "A) Biometric Authentication",
+    question: "In C, what is the correct way to declare a stack using an array of size 10?",
+    options: ["A) int stack[10];", "B) int stack[] = {10};", "C) int stack = new int[10];", "D) int stack[10] = {0};"],
+    answer: "A) int stack[10];",
     timer: 30
   },
   {
-    question: "Which technology focuses on developing machines that can perform tasks without human intervention, learning from experience and data?",
-    options: ["A) Artificial Intelligence (AI)", "B) Machine Learning", "C) Robotics", "D) Automation"],
-    answer: "A) Artificial Intelligence (AI)",
+    question: "How do you implement a stack overflow condition check in C?",
+    options: ["A) if (top >= MAX_SIZE - 1)", "B) if (top < MAX_SIZE - 1)", "C) if (top == 0)", "D) if (top > 0)"],
+    answer: "A) if (top >= MAX_SIZE - 1)",
     timer: 30
   },
   {
-    question: "What is the concept of interconnected devices and systems that can communicate and exchange data over the internet?",
-    options: ["A) Internet of Things (IoT)", "B) Artificial Intelligence (AI)", "C) Cloud Computing", "D) Smart Systems"],
-    answer: "A) Internet of Things (IoT)",
+    question: "What will be the value of the top element after the following operations on an empty stack? push(1), push(2), pop(), push(3), push(4)",
+    options: ["A) 1", "B) 2", "C) 3", "D) 4"],
+    answer: "D) 4",
     timer: 30
   },
   {
-    question: "Name the technology that uses radio waves to identify and track tags attached to objects, commonly used in supply chain management.",
-    options: ["A) Barcode Technology", "B) RFID (Radio Frequency Identification)", "C) NFC (Near Field Communication)", "D) GPS Tracking"],
-    answer: "C)NFC (Near Field Communication)",
+    question: "In C, what does the following code snippet do?\n\n```c\nif (top == -1) {\n    printf(\"Stack is empty\");\n}\n```",
+    options: ["A) Checks if the stack is full", "B) Checks if the stack is empty", "C) Adds an element to the stack", "D) Removes an element from the stack"],
+    answer: "B) Checks if the stack is empty",
     timer: 30
   },
   {
-    question: "Which technology involves the use of algorithms to analyze medical data and assist in diagnosing diseases and recommending treatments?",
-    options: ["A) Medical Imaging Technology", "B) Artificial Intelligence (AI)", "C) Telemedicine", "D) Medical Artificial Intelligence (Medical AI)"],
-    answer: "D) Medical Artificial Intelligence (Medical AI)",
+    question: "In Python, which list method would you use to add an element to the top of the stack?",
+    options: ["A) append()", "B) insert()", "C) push()", "D) add()"],
+    answer: "A) append()",
     timer: 30
   },
   {
-    question: "What is the term for the process of converting spoken language into written text using computer algorithms?",
-    options: ["A) Speech Recognition", "B) Voice-to-Text Conversion", "C) Text-to-Speech (TTS)", "D) Natural Language Processing (NLP)"],
-    answer: "A) Speech Recognition",
+    question: "How do you initialize an empty stack in Python using a list?",
+    options: ["A) stack = []", "B) stack = list()", "C) stack = {}", "D) stack = list([])"],
+    answer: "A) stack = []",
     timer: 30
   },
   {
-    question: "Name the technology that allows real-time, simultaneous translation of spoken languages between two or more people.",
-    options: ["A) Language Translation Software", "B) Babel Fish", "C) Universal Translator", "D) Machine Translation"],
-    answer: "D) Machine Translation",
-    timer: 30
-  },
-  {
-    question: "Which technology is a distributed ledger system, like blockchain, but doesn't require the entire network to validate transactions?",
-    options: ["A) Blockchain", "B) Directed Acyclic Graph (DAG)", "C) Cryptocurrency", "D) Smart Contracts"],
-    answer: "B) Directed Acyclic Graph (DAG)",
-    timer: 30
-  },
-  {
-    question: "Name the technology that allows internet users to browse the web privately and securely, protecting their identity and data.",
-    options: ["A) Virtual Private Network (VPN)", "B) Secure Socket Layer (SSL)", "C) Tor Browser", "D) Incognito Mode"],
-    answer: "A) Virtual Private Network (VPN)",
-    timer: 30
-  },
-  {
-    question: "What is the term for a secure and tamper-resistant computer chip used in passports, credit cards, and identification documents?",
-    options: ["A) Smart Card", "B) Secure Element (SE)", "C) EMV Chip", "D) Biometric Chip"],
-    answer: "A) Smart Card",
-    timer: 30
-  },
-  {
-    question: "Name the technology that uses sound waves to transfer data between devices, replacing the need for Wi-Fi or Bluetooth connections.",
-    options: ["A) Nearby Share", "B) Acoustic Communication", "C) Sonar Technology", "D) Near Field Communication (NFC)"],
-    answer: "A) Nearby Share",
+    question: "What will be the output of the following Python code?\n\n```python\nstack = [1, 2, 3]\nstack.pop()\nstack.append(4)\nprint(stack[-1])\n```",
+    options: ["A) 1", "B) 2", "C) 3", "D) 4"],
+    answer: "D) 4",
     timer: 30
   }
 ];
+
 
   // Shuffle the questions randomly
 questions.sort(() => Math.random() - 0.5);
