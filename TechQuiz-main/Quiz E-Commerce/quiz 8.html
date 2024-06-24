@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> CS Fundamentals </title>
+  <title> Types of Linked List </title>
   <style>
   
     #loader {
@@ -222,7 +222,7 @@ font-family: "Palatino Linotype", serif;
       <div class="tagline">Test your tech knowledge</div>
     </div>
   </div>
-  <h1>TechQuiz- CS Fundamentals </h1>
+  <h1> Types of linked list </h1>
   <div id="quiz-container">
     <div id="question-container"></div>
     <div id="options-container"></div>
@@ -242,152 +242,66 @@ font-family: "Palatino Linotype", serif;
 
 const questions = [
   {
-    question: "What does 'CPU' stand for in computer terminology?",
-    options: ["A) Central Processing Unit", "B) Computer Processing Unit", "C) Core Processing Unit", "D) Central Power Unit"],
-    answer: "A) Central Processing Unit",
+    question: "What is a linked list?",
+    options: ["A) A data structure consisting of nodes", "B) A type of array", "C) A collection of sorted data", "D) A file system structure"],
+    answer: "A) A data structure consisting of nodes",
     timer: 30
   },
   {
-    question: "Who is known as the 'father of modern computers' for his work on the first programmable digital computer, the Analytical Engine?",
-    options: ["A) Alan Turing", "B) Charles Babbage", "C) Ada Lovelace", "D) John von Neumann"],
-    answer: "B) Charles Babbage",
+    question: "In a singly linked list, what does each node contain?",
+    options: ["A) Data and a reference to the next node", "B) Data only", "C) Data and a reference to the previous node", "D) Data and two references to both previous and next nodes"],
+    answer: "A) Data and a reference to the next node",
     timer: 30
   },
   {
-    question: "Which computer component holds the primary storage for data and programs that the CPU can access quickly?",
-    options: ["A) GPU (Graphics Processing Unit)", "B) RAM (Random Access Memory)", "C) HDD (Hard Disk Drive)", "D) PSU (Power Supply Unit)"],
-    answer: "B) RAM (Random Access Memory)",
+    question: "What is a doubly linked list?",
+    options: ["A) A linked list where each node has references to both the next and previous nodes", "B) A linked list with only one node", "C) A linked list that can hold only integer values", "D) A linked list that cannot be modified"],
+    answer: "A) A linked list where each node has references to both the next and previous nodes",
     timer: 30
   },
   {
-    question: "What is the term for a collection of interconnected computers or devices that can communicate and share resources?",
-    options: ["A) Internet", "B) Network", "C) Cloud", "D) Server"],
-    answer: "B) Network",
+    question: "Which of the following is true about a circular linked list?",
+    options: ["A) The last node points back to the first node", "B) It has no head node", "C) It contains a fixed number of nodes", "D) It only allows forward traversal"],
+    answer: "A) The last node points back to the first node",
     timer: 30
   },
   {
-    question: "Which early programming language, developed in the 1950s, is considered one of the first high-level languages and is still used in some legacy systems?",
-    options: ["A) COBOL", "B) Fortran", "C) Assembly", "D) Lisp"],
-    answer: "B) Fortran",
+    question: "What is the main advantage of a circular linked list over a singly linked list?",
+    options: ["A) Easier to implement", "B) Better memory usage", "C) Allows easy traversal from any node", "D) Improved data security"],
+    answer: "C) Allows easy traversal from any node",
     timer: 30
   },
   {
-    question: "What was the name of the first electronic general-purpose computer, built during World War II to decode encrypted messages?",
-    options: ["A) ENIAC", "B) Colossus", "C) UNIVAC", "D) EDVAC"],
-    answer: "B) Colossus",
+    question: "In a singly linked list, which node is the last node?",
+    options: ["A) The node with a reference to the first node", "B) The node with a null reference", "C) The head node", "D) The node with a reference to itself"],
+    answer: "B) The node with a null reference",
     timer: 30
   },
   {
-    question: "What is the binary representation of the decimal number 42?",
-    options: ["A) 00101010", "B) 101010", "C) 111000", "D) 100100"],
-    answer: "A) 00101010",
+    question: "How do you traverse a singly linked list?",
+    options: ["A) By starting at the head node and following the references to the next nodes", "B) By starting at the tail node", "C) By using a binary search", "D) By starting at the middle node"],
+    answer: "A) By starting at the head node and following the references to the next nodes",
     timer: 30
   },
   {
-    question: "Name the logic gate that performs the NOT operation, outputting the opposite of the input value.",
-    options: ["A) AND Gate", "B) OR Gate", "C) NOT Gate", "D) XOR Gate"],
-    answer: "C) NOT Gate",
+    question: "What is a sentinel node in a linked list?",
+    options: ["A) A dummy node at the beginning or end to simplify edge conditions", "B) A node that contains special data", "C) The first node in the list", "D) The last node in the list"],
+    answer: "A) A dummy node at the beginning or end to simplify edge conditions",
     timer: 30
   },
   {
-    question: "Which technology, pioneered by Douglas Engelbart in the 1960s, is considered the precursor to modern graphical user interfaces?",
-    options: ["A) Mouse", "B) Graphical User Interface (GUI)", "C) Hypertext", "D) Hyperlink"],
-    answer: "B) Graphical User Interface (GUI)",
+    question: "Which operation is not efficient in a singly linked list?",
+    options: ["A) Traversing the list", "B) Inserting at the head", "C) Deleting the head node", "D) Accessing the nth element directly"],
+    answer: "D) Accessing the nth element directly",
     timer: 30
   },
   {
-    question: "In computer history, what is the name of the first mass-produced personal computer, launched in 1977?",
-    options: ["A) IBM PC", "B) Commodore 64", "C) Apple II", "D) Altair 8800"],
-    answer: "C) Apple II",
-    timer: 30
-  },
-  {
-    question: "What is the time complexity of performing a linear search on an array of n elements?",
-    options: ["A) O(n log n)", "B) O(n^2)", "C) O(log n)", "D) O(n)"],
-    answer: "D) O(n)",
-    timer: 30
-  },
-  {
-    question: "In a binary search tree, which node is located at the top of the tree and does not have a parent?",
-    options: ["A) Root Node", "B) Leaf Node", "C) Child Node", "D) Internal Node"],
-    answer: "A) Root Node",
-    timer: 30
-  },
-  {
-    question: "What is the process of dividing a large problem into smaller, more manageable subproblems and solving each subproblem independently?",
-    options: ["A) Dynamic Programming", "B) Greedy Algorithm", "C) Divide and Conquer", "D) Backtracking"],
-    answer: "C) Divide and Conquer",
-    timer: 30
-  },
-  {
-    question: "Which sorting algorithm has an average-case time complexity of O(n log n) and is known for its divide-and-conquer approach?",
-    options: ["A) Bubble Sort", "B) Insertion Sort", "C) Merge Sort", "D) Selection Sort"],
-    answer: "C) Merge Sort",
-    timer: 30
-  },
-  {
-    question: "What is the term for a data structure that follows the 'first-in, first-out' (FIFO) principle, like waiting in a queue?",
-    options: ["A) Stack", "B) Queue", "C) Linked List", "D) Tree"],
-    answer: "B) Queue",
-    timer: 30
-  },
-  {
-    question: "Name the algorithm used to find the shortest path between nodes in a weighted graph.",
-    options: ["A) Dijkstra's Algorithm", "B) Depth-First Search", "C) Breadth-First Search", "D) Bellman-Ford Algorithm"],
-    answer: "A) Dijkstra's Algorithm",
-    timer: 30
-  },
-  {
-    question: "Which data structure allows efficient retrieval, insertion, and deletion of elements with a unique key in logarithmic time?",
-    options: ["A) Hash Table", "B) Linked List", "C) Stack", "D) Binary Search Tree"],
-    answer: "D) Binary Search Tree",
-    timer: 30
-  },
-  {
-    question: "What is the worst-case time complexity of a bubble sort algorithm for an array of n elements?",
-    options: ["A) O(n log n)", "B) O(n)", "C) O(n^2)", "D) O(log n)"],
-    answer: "C) O(n^2)",
-    timer: 30
-  },
-  {
-    question: "In a binary search tree, which node has at most two children and is not a leaf node?",
-    options: ["A) Root Node", "B) Leaf Node", "C) Internal Node", "D) External Node"],
-    answer: "C) Internal Node",
-    timer: 30
-  },
-  {
-    question: "What is the process of repeatedly dividing a sorted array in half to find a specific element called?",
-    options: ["A) Binary Search", "B) Linear Search", "C) Merge Sort", "D) Quick Sort"],
-    answer: "A) Binary Search",
-    timer: 30
-  },
-  {
-    question: "Which programming paradigm focuses on defining data and the operations that can be performed on that data?",
-    options: ["A) Object-Oriented Programming (OOP)", "B) Functional Programming", "C) Procedural Programming", "D) Event-Driven Programming"],
-    answer: "C) Procedural Programming",
-    timer: 30
-  },
-  {
-    question: "What is the term for a named storage location in memory that holds a value, and its value can change during the program's execution?",
-    options: ["A) Function", "B) Class", "C) Object", "D) Variable"],
-    answer: "D) Variable",
-    timer: 30
-  },
-  {
-    question: "In object-oriented programming, what is the process of creating a new instance of a class called?",
-    options: ["A) Inheritance", "B) Encapsulation", "C) Abstraction", "D) Instantiation"],
-    answer: "D) Instantiation",
-    timer: 30
-  },
-  {
-    question: "Which type of error occurs during the program's execution and causes the program to terminate abnormally?",
-    options: ["A) Syntax Error", "B) Compile-Time Error", "C) Run-Time Error", "D) Logical Error"],
-    answer: "C) Run-Time Error",
+    question: "What is the time complexity of inserting a node at the beginning of a singly linked list?",
+    options: ["A) O(1)", "B) O(n)", "C) O(log n)", "D) O(n^2)"],
+    answer: "A) O(1)",
     timer: 30
   }
 ];
-// Shuffle the questions randomly
-questions.sort(() => Math.random() - 0.5);
 
  
 let currentQuestionIndex = 0;
