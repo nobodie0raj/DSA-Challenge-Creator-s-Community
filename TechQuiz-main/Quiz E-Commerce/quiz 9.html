@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> CS Fundamentals </title>
+  <title> Binary Search </title>
   <style>
   
     #loader {
@@ -222,7 +222,7 @@ font-family: "Palatino Linotype", serif;
       <div class="tagline">Test your tech knowledge</div>
     </div>
   </div>
-  <h1>TechQuiz- CS Fundamentals </h1>
+  <h1>Binary Search </h1>
   <div id="quiz-container">
     <div id="question-container"></div>
     <div id="options-container"></div>
@@ -239,138 +239,176 @@ font-family: "Palatino Linotype", serif;
         loader.classList.add('hidden');
       }, 1000);
     });
-
 const questions = [
   {
-    question: "What is the role of an operating system in a computer system?",
+    question: "What is the time complexity of binary search in the worst case?",
     options: [
-      "A) Manage hardware and software resources, provide user interfaces, and run applications.",
-      "B) Control peripheral devices and execute application programs.",
-      "C) Perform arithmetic and logical operations on data.",
-      "D) Create and manage databases for storing information."
+      "A) O(n)",
+      "B) O(log n)",
+      "C) O(n log n)",
+      "D) O(1)"
     ],
-    answer: "A) Manage hardware and software resources, provide user interfaces, and run applications.",
+    answer: "B) O(log n)",
     timer: 30
   },
   {
-    question: "Name the component of the operating system that manages and allocates memory resources.",
-    options: ["A) Processor Scheduler", "B) File Manager", "C) Memory Manager", "D) Device Driver"],
-    answer: "C) Memory Manager",
+    question: "What is the primary requirement for applying binary search on an array?",
+    options: [
+      "A) The array must be sorted.",
+      "B) The array must be unsorted.",
+      "C) The array must have unique elements.",
+      "D) The array must be of even length."
+    ],
+    answer: "A) The array must be sorted.",
     timer: 30
   },
   {
-    question: "Which networking protocol is used to retrieve email messages from a remote server to a local client?",
-    options: ["A) SMTP", "B) POP3", "C) HTTP", "D) FTP"],
-    answer: "B) POP3",
+    question: "In binary search, if the middle element is the target, what should be the next step?",
+    options: [
+      "A) Return the middle element index.",
+      "B) Search in the left half of the array.",
+      "C) Search in the right half of the array.",
+      "D) Return -1."
+    ],
+    answer: "A) Return the middle element index.",
     timer: 30
   },
   {
-    question: "What is the primary purpose of the Domain Name System (DNS) in networking?",
-    options: ["A) Assign IP addresses to devices on the network.", "B) Provide secure data transmission.", "C) Resolve domain names to IP addresses.", "D) Establish virtual private networks."],
-    answer: "C) Resolve domain names to IP addresses.",
+    question: "Which data structure is typically used to implement binary search?",
+    options: [
+      "A) Linked List",
+      "B) Array",
+      "C) Stack",
+      "D) Queue"
+    ],
+    answer: "B) Array",
     timer: 30
   },
   {
-    question: "Name the address resolution protocol that maps an IP address to a physical MAC address on a local network.",
-    options: ["A) ARP", "B) DNS", "C) DHCP", "D) IPsec"],
-    answer: "A) ARP",
+    question: "What happens to the search space after each comparison in binary search?",
+    options: [
+      "A) It is reduced by half.",
+      "B) It is reduced by one element.",
+      "C) It remains the same.",
+      "D) It is doubled."
+    ],
+    answer: "A) It is reduced by half.",
     timer: 30
   },
   {
-    question: "In an IP address like 192.168.0.1, what does the '192.168' part represent?",
-    options: ["A) Network ID", "B) Host ID", "C) Subnet of the IP address", "D) Class of the IP address"],
-    answer: "A) Network ID",
+    question: "In binary search, if the target element is less than the middle element, where should the search continue?",
+    options: [
+      "A) In the right half of the array",
+      "B) In the left half of the array",
+      "C) In the entire array",
+      "D) Search terminates"
+    ],
+    answer: "B) In the left half of the array",
     timer: 30
   },
   {
-    question: "What is the term for a network topology where all devices are connected to a central hub or switch?",
-    options: ["A) Star Topology", "B) Bus Topology", "C) Ring Topology", "D) Mesh Topology"],
-    answer: "A) Star Topology",
+    question: "In binary search, what is the base case to terminate the recursion?",
+    options: [
+      "A) When the array is unsorted.",
+      "B) When the search space is empty.",
+      "C) When the middle element is the target.",
+      "D) When the array has only one element."
+    ],
+    answer: "B) When the search space is empty.",
     timer: 30
   },
   {
-    question: "Which layer of the OSI model is responsible for ensuring reliable data delivery between two nodes on a network?",
-    options: ["A) Physical Layer", "B) Data Link Layer", "C) Transport Layer", "D) Network Layer"],
-    answer: "C) Transport Layer",
+    question: "Which of the following is true about binary search?",
+    options: [
+      "A) It can be applied to linked lists directly.",
+      "B) It is faster than linear search for unsorted arrays.",
+      "C) It works only on sorted arrays.",
+      "D) It always has a time complexity of O(1)."
+    ],
+    answer: "C) It works only on sorted arrays.",
     timer: 30
   },
   {
-    question: "What is the process of dividing a single network into multiple smaller networks called?",
-    options: ["A) VLAN", "B) Routing", "C) Subnetting", "D) Tunneling"],
-    answer: "C) Subnetting",
+    question: "If the binary search algorithm is implemented recursively, what happens after each recursive call?",
+    options: [
+      "A) The size of the array is doubled.",
+      "B) The size of the array is reduced to half.",
+      "C) The size of the array remains the same.",
+      "D) The size of the array is reduced by one."
+    ],
+    answer: "B) The size of the array is reduced to half.",
     timer: 30
   },
   {
-    question: "Name the protocol that allows secure file transfer over a network, encrypting data during transmission.",
-    options: ["A) FTP", "B) SSH", "C) HTTP", "D) SNMP"],
-    answer: "B) SSH",
+    question: "What is the space complexity of binary search implemented iteratively?",
+    options: [
+      "A) O(n)",
+      "B) O(log n)",
+      "C) O(1)",
+      "D) O(n log n)"
+    ],
+    answer: "C) O(1)",
     timer: 30
   },
   {
-    question: "What is the purpose of a database management system (DBMS)?",
-    options: ["A) Manage hardware resources in a database server.", "B) Control access to data in a database.", "C) Manage and organize data in a structured manner to allow efficient retrieval and manipulation.", "D) Provide a user interface for interacting with databases."],
-    answer: "C) Manage and organize data in a structured manner to allow efficient retrieval and manipulation.",
+    question: "Which type of search is generally more efficient for large, sorted datasets?",
+    options: [
+      "A) Linear search",
+      "B) Binary search",
+      "C) Hash search",
+      "D) Interpolation search"
+    ],
+    answer: "B) Binary search",
     timer: 30
   },
   {
-    question: "In a relational database, what is a table row called?",
-    options: ["A) Record", "B) Column", "C) Tuple", "D) Attribute"],
-    answer: "C) Tuple",
+    question: "In binary search, if the target is greater than the middle element, where should the search continue?",
+    options: [
+      "A) In the left half of the array",
+      "B) In the right half of the array",
+      "C) In the entire array",
+      "D) Search terminates"
+    ],
+    answer: "B) In the right half of the array",
     timer: 30
   },
   {
-    question: "Which SQL command is used to retrieve data from a database table based on specified conditions?",
-    options: ["A) DELETE", "B) UPDATE", "C) INSERT", "D) SELECT"],
-    answer: "D) SELECT",
+    question: "Which of the following problems can be solved using binary search?",
+    options: [
+      "A) Searching in a sorted array",
+      "B) Finding the peak element in an array",
+      "C) Finding the square root of a number",
+      "D) All of the above"
+    ],
+    answer: "D) All of the above",
     timer: 30
   },
   {
-    question: "What is the term for a unique identifier for each row in a database table?",
-    options: ["A) Primary Key", "B) Foreign Key", "C) Index", "D) Attribute"],
-    answer: "A) Primary Key",
+    question: "What is the maximum number of comparisons needed to find an element in a sorted array of 1024 elements using binary search?",
+    options: [
+      "A) 10",
+      "B) 9",
+      "C) 11",
+      "D) 12"
+    ],
+    answer: "A) 10",
     timer: 30
   },
   {
-    question: "Which SQL command is used to add new data rows to a database table?",
-    options: ["A) SELECT", "B) INSERT", "C) UPDATE", "D) DELETE"],
-    answer: "B) INSERT",
-    timer: 30
-  },
-  {
-    question: "In a relational database, what is a table column called?",
-    options: ["A) Record", "B) Attribute", "C) Field", "D) Tuple"],
-    answer: "B) Attribute",
-    timer: 30
-  },
-  {
-    question: "What is the process of combining data from two or more tables into a single result set in SQL?",
-    options: ["A) JOIN", "B) SELECT", "C) INSERT", "D) UPDATE"],
-    answer: "A) JOIN",
-    timer: 30
-  },
-  {
-    question: "Which SQL command is used to modify existing data rows in a database table?",
-    options: ["A) INSERT", "B) DELETE", "C) UPDATE", "D) ALTER"],
-    answer: "C) UPDATE",
-    timer: 30
-  },
-  {
-    question: "In database terminology, what is the process of ensuring data consistency and accuracy called?",
-    options: ["A) Data Validation", "B) Data Verification", "C) Data Cleaning", "D) Data Integrity"],
-    answer: "D) Data Integrity",
-    timer: 30
-  },
-  {
-    question: "What is the purpose of primary keys in a database table?",
-    options: ["A) Provide an order for the rows in the table.", "B) Ensure data integrity and uniqueness for each row.", "C) Allow efficient retrieval of data from the table.", "D) Create relationships between tables."],
-    answer: "B) Ensure data integrity and uniqueness for each row.",
+    question: "In binary search, what is the first step after calculating the middle index?",
+    options: [
+      "A) Compare the middle element with the target element.",
+      "B) Compare the first element with the target element.",
+      "C) Compare the last element with the target element.",
+      "D) Compare the array length with the target element."
+    ],
+    answer: "A) Compare the middle element with the target element.",
     timer: 30
   }
-  // Add the remaining questions here...
 ];
 
- // Shuffle the questions randomly
-questions.sort(() => Math.random() - 0.5);
+
+
 
 let currentQuestionIndex = 0;
     let score = 0;
