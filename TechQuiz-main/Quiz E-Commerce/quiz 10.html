@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> CS Fundamentals </title>
+  <title> Binary Search </title>
   <style>
   
     #loader {
@@ -222,7 +222,7 @@ font-family: "Palatino Linotype", serif;
       <div class="tagline">Test your tech knowledge</div>
     </div>
   </div>
-  <h1>TechQuiz- CS Fundamentals </h1>
+  <h1>Binary Search </h1>
   <div id="quiz-container">
     <div id="question-container"></div>
     <div id="options-container"></div>
@@ -239,193 +239,176 @@ font-family: "Palatino Linotype", serif;
         loader.classList.add('hidden');
       }, 1000);
     });
-
 const questions = [
   {
-    question: "Which computer memory is directly accessible by the CPU and stores data and instructions that are currently being executed?",
-    options: ["A) Cache Memory", "B) Random Access Memory (RAM)", "C) Hard Disk Drive (HDD)", "D) Solid State Drive (SSD)"],
-    answer: "B) Random Access Memory (RAM)",
+    question: "What is the time complexity of linear search in the worst case?",
+    options: [
+      "A) O(1)",
+      "B) O(n)",
+      "C) O(log n)",
+      "D) O(n^2)"
+    ],
+    answer: "B) O(n)",
     timer: 30
   },
   {
-    question: "What is the term for the smallest unit of data in a computer, represented as a 0 or 1?",
-    options: ["A) Bit", "B) Byte", "C) Megabyte", "D) Gigabyte"],
-    answer: "A) Bit",
+    question: "What is the time complexity of binary search in the worst case?",
+    options: [
+      "A) O(n)",
+      "B) O(log n)",
+      "C) O(n log n)",
+      "D) O(1)"
+    ],
+    answer: "B) O(log n)",
     timer: 30
   },
   {
-    question: "Which component of the CPU performs arithmetic and logical operations on data?",
-    options: ["A) Control Unit", "B) Arithmetic Logic Unit (ALU)", "C) Cache Memory", "D) Register"],
-    answer: "B) Arithmetic Logic Unit (ALU)",
+    question: "Which search algorithm requires the array to be sorted before performing the search?",
+    options: [
+      "A) Linear search",
+      "B) Binary search",
+      "C) Both linear and binary search",
+      "D) None of the above"
+    ],
+    answer: "B) Binary search",
     timer: 30
   },
   {
-    question: "Name the high-speed memory storage inside the CPU, used to store frequently accessed data and instructions.",
-    options: ["A) Hard Disk Drive (HDD)", "B) Solid State Drive (SSD)", "C) Cache Memory", "D) Random Access Memory (RAM)"],
-    answer: "C) Cache Memory",
+    question: "Which search algorithm is more efficient for small datasets?",
+    options: [
+      "A) Linear search",
+      "B) Binary search",
+      "C) Both are equally efficient",
+      "D) None of the above"
+    ],
+    answer: "A) Linear search",
     timer: 30
   },
   {
-    question: "What is the name of the technique used by processors to execute multiple instructions in parallel, improving performance?",
-    options: ["A) Multithreading", "B) Pipelining", "C) Overclocking", "D) Multiprocessing"],
-    answer: "B) Pipelining",
+    question: "Which search algorithm divides the search interval in half repeatedly?",
+    options: [
+      "A) Linear search",
+      "B) Binary search",
+      "C) Both linear and binary search",
+      "D) None of the above"
+    ],
+    answer: "B) Binary search",
     timer: 30
   },
   {
-    question: "Which computer component holds the firmware that initializes hardware components during the boot process?",
-    options: ["A) Central Processing Unit (CPU)", "B) Hard Disk Drive (HDD)", "C) Basic Input/Output System (BIOS)", "D) Random Access Memory (RAM)"],
-    answer: "C) Basic Input/Output System (BIOS)",
+    question: "Which search algorithm can be used on unsorted arrays?",
+    options: [
+      "A) Linear search",
+      "B) Binary search",
+      "C) Both linear and binary search",
+      "D) None of the above"
+    ],
+    answer: "A) Linear search",
     timer: 30
   },
   {
-    question: "What is the term for a computer system with two or more CPUs, allowing multiple processing tasks to be performed simultaneously?",
-    options: ["A) Dual-core System", "B) Multiprocessor System", "C) Single-core System", "D) Multithreading System"],
-    answer: "B) Multiprocessor System",
+    question: "In which scenario is linear search preferred over binary search?",
+    options: [
+      "A) When the array is sorted",
+      "B) When the array is unsorted",
+      "C) When the array is large",
+      "D) When the search element is at the end of the array"
+    ],
+    answer: "B) When the array is unsorted",
     timer: 30
   },
   {
-    question: "Name the process of transferring data from main memory to a storage device, like a hard disk, to free up memory space.",
-    options: ["A) Paging", "B) Swapping", "C) Pipelining", "D) Cache"],
-    answer: "B) Swapping",
+    question: "What is the primary advantage of binary search over linear search?",
+    options: [
+      "A) Simplicity",
+      "B) Efficiency for large datasets",
+      "C) No need for sorting",
+      "D) Works with both sorted and unsorted arrays"
+    ],
+    answer: "B) Efficiency for large datasets",
     timer: 30
   },
   {
-    question: "What is the term for the number of bits that a CPU can process in one instruction?",
-    options: ["A) Clock Speed", "B) Word Size", "C) Cache Size", "D) Bus Width"],
-    answer: "B) Word Size",
+    question: "How does linear search work?",
+    options: [
+      "A) It checks the middle element first.",
+      "B) It checks each element sequentially.",
+      "C) It divides the search interval in half.",
+      "D) It checks elements randomly."
+    ],
+    answer: "B) It checks each element sequentially.",
     timer: 30
   },
   {
-    question: "Which type of CPU architecture uses a single processor for all tasks and instructions?",
-    options: ["A) Multi-core Architecture", "B) Single-core Architecture", "C) Dual-core Architecture", "D) Hyper-threading Architecture"],
-    answer: "B) Single-core Architecture",
+    question: "In binary search, if the target element is greater than the middle element, where should the search continue?",
+    options: [
+      "A) In the left half of the array",
+      "B) In the right half of the array",
+      "C) In the entire array",
+      "D) Search terminates"
+    ],
+    answer: "B) In the right half of the array",
     timer: 30
   },
   {
-    question: "In software development, what is the process of finding and fixing errors or defects in a program called?",
-    options: ["A) Compiling", "B) Debugging", "C) Executing", "D) Profiling"],
-    answer: "B) Debugging",
+    question: "What is the space complexity of linear search?",
+    options: [
+      "A) O(1)",
+      "B) O(n)",
+      "C) O(log n)",
+      "D) O(n log n)"
+    ],
+    answer: "A) O(1)",
     timer: 30
   },
   {
-    question: "Name the practice in software development where new code changes are automatically tested to identify errors early.",
-    options: ["A) Version Control", "B) Continuous Integration", "C) Refactoring", "D) Pair Programming"],
-    answer: "B) Continuous Integration",
+    question: "What is the space complexity of binary search?",
+    options: [
+      "A) O(1)",
+      "B) O(n)",
+      "C) O(log n)",
+      "D) O(n log n)"
+    ],
+    answer: "A) O(1)",
     timer: 30
   },
   {
-    question: "What is the term for a formal description of the interactions between software components, defining their interfaces and behavior?",
-    options: ["A) Source Code", "B) Interface Specification", "C) Documentation", "D) Software Requirement Specification"],
-    answer: "B) Interface Specification",
+    question: "Which search algorithm is generally more efficient for large, sorted datasets?",
+    options: [
+      "A) Linear search",
+      "B) Binary search",
+      "C) Hash search",
+      "D) Interpolation search"
+    ],
+    answer: "B) Binary search",
     timer: 30
   },
   {
-    question: "Which software development methodology follows an iterative and incremental approach, with regular customer feedback and adaptability to changes?",
-    options: ["A) Waterfall", "B) Agile", "C) Scrum", "D) Spiral"],
-    answer: "B) Agile",
+    question: "In linear search, what happens if the target element is not found after checking all elements?",
+    options: [
+      "A) The search continues in reverse order.",
+      "B) The search terminates and returns -1.",
+      "C) The search starts over from the beginning.",
+      "D) None of the above"
+    ],
+    answer: "B) The search terminates and returns -1.",
     timer: 30
   },
   {
-    question: "Name the process of converting human-readable code into machine code that can be executed by a computer.",
-    options: ["A) Compilation", "B) Interpretation", "C) Debugging", "D) Profiling"],
-    answer: "A) Compilation",
-    timer: 30
-  },
-  {
-    question: "What is the term for the activity of determining the correctness and quality of software through rigorous testing?",
-    options: ["A) Debugging", "B) Compilation", "C) Profiling", "D) Software Testing"],
-    answer: "D) Software Testing",
-    timer: 30
-  },
-  {
-    question: "In version control systems, what is the action of combining changes from one branch into another branch called?",
-    options: ["A) Cloning", "B) Merging", "C) Committing", "D) Pushing"],
-    answer: "B) Merging",
-    timer: 30
-  },
-  {
-    question: "Which software development approach focuses on creating small, modular, and reusable code components?",
-    options: ["A) Procedural Programming", "B) Object-Oriented Programming", "C) Functional Programming", "D) Modular Development"],
-    answer: "D) Modular Development",
-    timer: 30
-  },
-  {
-    question: "Name the testing method where individual units or components of software are tested independently.",
-    options: ["A) Integration Testing", "B) System Testing", "C) Unit Testing", "D) Regression Testing"],
-    answer: "C) Unit Testing",
-    timer: 30
-  },
-  {
-    question: "What is the term for a software development approach that combines development and IT operations to deliver software more rapidly and efficiently?",
-    options: ["A) Agile", "B) DevOps", "C) Waterfall", "D) Scrum"],
-    answer: "B) DevOps",
-    timer: 30
-  },
-  {
-    question: "What is the name of the unique identifier assigned to each device connected to a network?",
-    options: ["A) IP Address", "B) MAC Address", "C) DNS Address", "D) URL"],
-    answer: "B) MAC Address",
-    timer: 30
-  },
-  {
-    question: "Which protocol is used to send email messages from a mail client to an outgoing mail server?",
-    options: ["A) HTTP", "B) FTP", "C) SMTP", "D) DNS"],
-    answer: "C) SMTP",
-    timer: 30
-  },
-  {
-    question: "Name the networking device that connects multiple local area networks (LANs) and forwards data between them.",
-    options: ["A) Modem", "B) Router", "C) Hub", "D) Switch"],
-    answer: "B) Router",
-    timer: 30
-  },
-  {
-    question: "What is the term for the physical layout or arrangement of devices on a network?",
-    options: ["A) Topology", "B) Protocol", "C) Architecture", "D) Configuration"],
-    answer: "A) Topology",
-    timer: 30
-  },
-  {
-    question: "Which organization develops and maintains standards for networking and communication protocols?",
-    options: ["A) IEEE", "B) ISO", "C) IETF", "D) ITU"],
-    answer: "C) IETF",
-    timer: 30
-  },
-  {
-    question: "Name the protocol used to convert domain names into IP addresses to facilitate internet communication.",
-    options: ["A) ARP", "B) DNS", "C) TCP", "D) IP"],
-    answer: "B) DNS",
-    timer: 30
-  },
-  {
-    question: "What is the process of breaking data into packets before transmission over a network and reassembling them at the destination?",
-    options: ["A) Fragmentation", "B) Encapsulation", "C) Segmentation", "D) Packetization"],
-    answer: "D) Packetization",
-    timer: 30
-  },
-  {
-    question: "Which type of network spans a large geographical area, often connecting multiple cities or countries?",
-    options: ["A) Local Area Network (LAN)", "B) Metropolitan Area Network (MAN)", "C) Wide Area Network (WAN)", "D) Personal Area Network (PAN)"],
-    answer: "C) Wide Area Network (WAN)",
-    timer: 30
-  },
-  {
-    question: "Name the network topology where each device is connected to a central hub or switch, forming a star-like structure.",
-    options: ["A) Bus Topology", "B) Ring Topology", "C) Mesh Topology", "D) Star Topology"],
-    answer: "D) Star Topology",
-    timer: 30
-  },
-  {
-    question: "What is the standard protocol used for secure communication over a computer network, encrypting data during transmission?",
-    options: ["A) TLS", "B) HTTP", "C) FTP", "D) SNMP"],
-    answer: "A) TLS",
+    question: "Which search algorithm is easier to implement?",
+    options: [
+      "A) Linear search",
+      "B) Binary search",
+      "C) Both are equally easy",
+      "D) None of the above"
+    ],
+    answer: "A) Linear search",
     timer: 30
   }
-  // Add the remaining questions here...
 ];
- 
-// Shuffle the questions randomly
-questions.sort(() => Math.random() - 0.5);
+  
+
+
 
 let currentQuestionIndex = 0;
     let score = 0;
