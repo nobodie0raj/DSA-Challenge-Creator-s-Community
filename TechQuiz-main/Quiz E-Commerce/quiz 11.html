@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> CS Fundamentals </title>
+  <title> Recursion </title>
   <style>
   
     #loader {
@@ -222,7 +222,7 @@ font-family: "Palatino Linotype", serif;
       <div class="tagline">Test your tech knowledge</div>
     </div>
   </div>
-  <h1>TechQuiz- CS Fundamentals </h1>
+  <h1>Recursion Quiz </h1>
   <div id="quiz-container">
     <div id="question-container"></div>
     <div id="options-container"></div>
@@ -241,128 +241,97 @@ font-family: "Palatino Linotype", serif;
     });
 const questions = [
   {
-    question: "Which markup language is used to structure the content of web pages and is the backbone of all websites?",
-    options: ["A) JavaScript", "B) Cascading Style Sheets (CSS)", "C) Hypertext Transfer Protocol Secure (HTTPS)", "D) Hypertext Markup Language (HTML)"],
-    answer: "D) Hypertext Markup Language (HTML)",
+    question: "What is recursion?",
+    options: ["A) A process where a function calls itself", "B) A function that never stops", "C) A function that calls another function", "D) A loop that runs indefinitely"],
+    answer: "A) A process where a function calls itself",
     timer: 30
   },
   {
-    question: "Name the style sheet language used to control the layout and presentation of web pages.",
-    options: ["A) JavaScript", "B) Hypertext Transfer Protocol Secure (HTTPS)", "C) Cascading Style Sheets (CSS)", "D) Hypertext Markup Language (HTML)"],
-    answer: "C) Cascading Style Sheets (CSS)",
+    question: "Which of the following is a base case in recursion?",
+    options: ["A) The case where the function calls itself", "B) The condition where recursion stops", "C) The condition where the function does not call itself", "D) The case where the function runs indefinitely"],
+    answer: "B) The condition where recursion stops",
     timer: 30
   },
   {
-    question: "What is the process of ensuring that a website or web application functions correctly across different browsers and devices?",
-    options: ["A) Cross-Browser Testing", "B) Responsive Design", "C) WebSockets", "D) Standalone Application"],
-    answer: "A) Cross-Browser Testing",
+    question: "What is the result of the following recursive function when called with the argument 3?\n\nfunction factorial(n) {\n  if (n <= 1) return 1;\n  return n * factorial(n - 1);\n}",
+    options: ["A) 1", "B) 3", "C) 6", "D) 9"],
+    answer: "C) 6",
     timer: 30
   },
   {
-    question: "Which programming language is commonly used for adding interactivity and dynamic content to web pages?",
-    options: ["A) Cascading Style Sheets (CSS)", "B) Hypertext Markup Language (HTML)", "C) JavaScript", "D) Hypertext Transfer Protocol Secure (HTTPS)"],
-    answer: "C) JavaScript",
+    question: "What is the result of the following recursive function when called with the argument 5?\n\nfunction sum(n) {\n  if (n <= 0) return 0;\n  return n + sum(n - 1);\n}",
+    options: ["A) 5", "B) 10", "C) 15", "D) 20"],
+    answer: "C) 15",
     timer: 30
   },
   {
-    question: "Name the protocol used for secure data transmission over the internet, commonly used for online shopping and banking.",
-    options: ["A) Hypertext Markup Language (HTML)", "B) JavaScript", "C) Hypertext Transfer Protocol Secure (HTTPS)", "D) Cascading Style Sheets (CSS)"],
-    answer: "C) Hypertext Transfer Protocol Secure (HTTPS)",
+    question: "Which of the following is true about a recursive solution?",
+    options: ["A) It always has a base case", "B) It never terminates", "C) It uses iteration to solve the problem", "D) It is always more efficient than an iterative solution"],
+    answer: "A) It always has a base case",
     timer: 30
   },
   {
-    question: "What is the term for a website design that automatically adjusts and optimizes its layout based on the user's device screen size?",
-    options: ["A) Responsive Design", "B) WebSockets", "C) Cross-Browser Testing", "D) Standalone Application"],
-    answer: "A) Responsive Design",
+    question: "What is tail recursion?",
+    options: ["A) A recursion where the recursive call is the last thing executed by the function", "B) A recursion that has multiple recursive calls", "C) A recursion that uses global variables", "D) A recursion that doesn't have a base case"],
+    answer: "A) A recursion where the recursive call is the last thing executed by the function",
     timer: 30
   },
   {
-    question: "Which web technology allows real-time communication between web browsers and servers over a persistent connection?",
-    options: ["A) JavaScript", "B) WebSockets", "C) Cascading Style Sheets (CSS)", "D) Hypertext Markup Language (HTML)"],
-    answer: "B) WebSockets",
+    question: "How many recursive calls are made by the following function when called with the argument 4?\n\nfunction countDown(n) {\n  if (n <= 0) return;\n  console.log(n);\n  countDown(n - 1);\n}",
+    options: ["A) 4", "B) 5", "C) 6", "D) 3"],
+    answer: "B) 5",
     timer: 30
   },
   {
-    question: "Name the web development architecture where the server handles most of the application logic and data processing.",
-    options: ["A) Standalone Application", "B) Responsive Design", "C) WebSockets", "D) Server-Side Rendering (SSR)"],
-    answer: "D) Server-Side Rendering (SSR)",
+    question: "What is the main disadvantage of recursion?",
+    options: ["A) It always requires more space", "B) It is harder to debug", "C) It always runs slower than iteration", "D) It requires more stack space, which can lead to stack overflow"],
+    answer: "D) It requires more stack space, which can lead to stack overflow",
     timer: 30
   },
   {
-    question: "What is the term for a unique address that identifies a specific webpage on the internet?",
-    options: ["A) Cascading Style Sheets (CSS)", "B) JavaScript", "C) Uniform Resource Locator (URL)", "D) Hypertext Markup Language (HTML)"],
-    answer: "C) Uniform Resource Locator (URL)",
+    question: "Which of the following problems can be solved using recursion?",
+    options: ["A) Factorial calculation", "B) Fibonacci sequence", "C) Tower of Hanoi", "D) All of the above"],
+    answer: "D) All of the above",
     timer: 30
   },
   {
-    question: "Which organization develops and maintains web standards, such as HTML, CSS, and JavaScript?",
-    options: ["A) Hypertext Transfer Protocol Secure (HTTPS)", "B) JavaScript", "C) World Wide Web Consortium (W3C)", "D) Cascading Style Sheets (CSS)"],
-    answer: "C) World Wide Web Consortium (W3C)",
+    question: "What will be the output of the following code when called with the argument 3?\n\nfunction printStars(n) {\n  if (n <= 0) return;\n  console.log('*');\n  printStars(n - 1);\n}",
+    options: ["A) 3 stars", "B) 2 stars", "C) 1 star", "D) No stars"],
+    answer: "A) 3 stars",
     timer: 30
   },
   {
-    question: "In software engineering, what is the process of gathering and defining the requirements for a software project?",
-    options: ["A) Standalone Application", "B) WebSockets", "C) Requirements Gathering", "D) Server-Side Rendering (SSR)"],
-    answer: "C) Requirements Gathering",
+    question: "Which of the following is a correct example of a base case for a recursive function?",
+    options: ["A) if (n == 0) return 1;", "B) if (n > 0) return n;", "C) if (n != 0) return 0;", "D) if (n < 0) return n;"],
+    answer: "A) if (n == 0) return 1;",
     timer: 30
   },
   {
-    question: "Name the systematic process of designing, constructing, and documenting software to meet specific needs and requirements.",
-    options: ["A) Cascading Style Sheets (CSS)", "B) JavaScript", "C) Software Development", "D) Hypertext Markup Language (HTML)"],
-    answer: "C) Software Development",
+    question: "What is the time complexity of a recursive function to compute the nth Fibonacci number without memoization?",
+    options: ["A) O(n)", "B) O(log n)", "C) O(2^n)", "D) O(n^2)"],
+    answer: "C) O(2^n)",
     timer: 30
   },
   {
-    question: "What is the term for the process of finding and fixing security vulnerabilities in software code?",
-    options: ["A) JavaScript", "B) Security Testing", "C) Hypertext Markup Language (HTML)", "D) Cascading Style Sheets (CSS)"],
-    answer: "B) Security Testing",
+    question: "What is memoization in the context of recursion?",
+    options: ["A) Storing the results of expensive function calls", "B) A method to reduce space complexity", "C) A technique to improve iterative algorithms", "D) A way to write recursive functions without base cases"],
+    answer: "A) Storing the results of expensive function calls",
     timer: 30
   },
   {
-    question: "Which type of software testing involves evaluating a system's compliance with specified requirements?",
-    options: ["A) Validation Testing", "B) Standalone Application", "C) WebSockets", "D) Cross-Browser Testing"],
-    answer: "A) Validation Testing",
+    question: "What does the following function compute when called with the argument 4?\n\nfunction double(n) {\n  if (n == 0) return 0;\n  return 2 + double(n - 1);\n}",
+    options: ["A) 4", "B) 6", "C) 8", "D) 10"],
+    answer: "C) 8",
     timer: 30
   },
   {
-    question: "Name the development approach where software is continuously released and updated based on user feedback and changing requirements.",
-    options: ["A) Standalone Application", "B) WebSockets", "C) Agile Development", "D) Server-Side Rendering (SSR)"],
-    answer: "C) Agile Development",
-    timer: 30
-  },
-  {
-    question: "What is the term for a complete and standalone version of a software system that can be deployed and used independently?",
-    options: ["A) Standalone Application", "B) Responsive Design", "C) WebSockets", "D) Server-Side Rendering (SSR)"],
-    answer: "A) Standalone Application",
-    timer: 30
-  },
-  {
-    question: "Which software development methodology emphasizes individuals and interactions over processes and tools?",
-    options: ["A) WebSockets", "B) JavaScript", "C) Agile Manifesto", "D) Cascading Style Sheets (CSS)"],
-    answer: "C) Agile Manifesto",
-    timer: 30
-  },
-  {
-    question: "Name the practice of regularly integrating code changes from multiple developers into a shared repository.",
-    options: ["A) Standalone Application", "B) Continuous Integration (CI)", "C) WebSockets", "D) Server-Side Rendering (SSR)"],
-    answer: "B) Continuous Integration (CI)",
-    timer: 30
-  },
-  {
-    question: "What is the process of transforming user requirements into a detailed software design specification?",
-    options: ["A) WebSockets", "B) Software Design", "C) Hypertext Markup Language (HTML)", "D) Cascading Style Sheets (CSS)"],
-    answer: "B) Software Design",
-    timer: 30
-  },
-  {
-    question: "Which software development model is characterized by a linear and sequential approach, with each phase following the previous one?",
-    options: ["A) Standalone Application", "B) Waterfall Model", "C) WebSockets", "D) Server-Side Rendering (SSR)"],
-    answer: "B) Waterfall Model",
+    question: "What will be the result of the following recursive function when called with the argument 2?\n\nfunction powerOfTwo(n) {\n  if (n == 0) return 1;\n  return 2 * powerOfTwo(n - 1);\n}",
+    options: ["A) 2", "B) 4", "C) 8", "D) 16"],
+    answer: "B) 4",
     timer: 30
   }
 ];
-// Shuffle the questions randomly
-questions.sort(() => Math.random() - 0.5);
+
 
 
 
