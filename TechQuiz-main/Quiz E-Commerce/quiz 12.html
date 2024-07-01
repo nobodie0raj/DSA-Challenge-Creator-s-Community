@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> CS Fundamentals </title>
+  <title> Recursion Function </title>
   <style>
   
     #loader {
@@ -222,7 +222,7 @@ font-family: "Palatino Linotype", serif;
       <div class="tagline">Test your tech knowledge</div>
     </div>
   </div>
-  <h1>TechQuiz- CS Fundamentals </h1>
+  <h1> Recursive Function </h1>
   <div id="quiz-container">
     <div id="question-container"></div>
     <div id="options-container"></div>
@@ -239,132 +239,99 @@ font-family: "Palatino Linotype", serif;
         loader.classList.add('hidden');
       }, 1000);
     });
+    
 const questions = [
   {
-    question: "What is the binary representation of the decimal number 42?",
-    options: ["A) 100110", "B) 101010", "C) 110010", "D) 111000"],
-    answer: "B) 101010",
+    question: "What is recursion in computer programming?",
+    options: ["A) A function calling itself", "B) A loop inside a function", "C) A function calling another function", "D) A nested loop"],
+    answer: "A) A function calling itself",
     timer: 30
   },
   {
-    question: "Name the programming language developed by Apple for creating iOS and macOS applications.",
-    options: ["A) Swift", "B) Python", "C) Java", "D) C++"],
-    answer: "A) Swift",
+    question: "What is the base case in recursion?",
+    options: ["A) The condition for the loop to end", "B) The starting point of the function", "C) The condition where the function stops calling itself", "D) The default value of the function"],
+    answer: "C) The condition where the function stops calling itself",
     timer: 30
   },
   {
-    question: "Which computer component holds the primary storage for data and programs that the CPU can access quickly?",
-    options: ["A) Random Access Memory (RAM)", "B) Central Processing Unit (CPU)", "C) Hard Disk Drive (HDD)", "D) Graphics Processing Unit (GPU)"],
-    answer: "A) Random Access Memory (RAM)",
+    question: "Which of the following is an example of a recursive function?",
+    options: ["A) function factorial(n) { if (n <= 1) return 1; return n * factorial(n - 1); }", "B) function sum(a, b) { return a + b; }", "C) function multiply(a, b) { return a * b; }", "D) function loop(n) { for (let i = 0; i < n; i++) { console.log(i); } }"],
+    answer: "A) function factorial(n) { if (n <= 1) return 1; return n * factorial(n - 1); }",
     timer: 30
   },
   {
-    question: "What is the term for a data structure that follows the 'first-in, first-out' (FIFO) principle, like waiting in a queue?",
-    options: ["A) Stack", "B) Heap", "C) Queue", "D) Array"],
-    answer: "C) Queue",
+    question: "What is the purpose of the base case in a recursive function?",
+    options: ["A) To initialize variables", "B) To perform the recursive call", "C) To terminate the recursive calls", "D) To print the result"],
+    answer: "C) To terminate the recursive calls",
     timer: 30
   },
   {
-    question: "In software development, what is the process of finding and fixing errors or defects in a program called?",
-    options: ["A) Debugging", "B) Testing", "C) Optimization", "D) Compiling"],
-    answer: "A) Debugging",
+    question: "Which of the following problems can be solved using recursion?",
+    options: ["A) Factorial of a number", "B) Finding the nth Fibonacci number", "C) Tower of Hanoi", "D) All of the above"],
+    answer: "D) All of the above",
     timer: 30
   },
   {
-    question: "Name the virtual assistant developed by Amazon, which powers devices like Echo and Alexa-enabled smart speakers.",
-    options: ["A) Siri", "B) Cortana", "C) Alexa", "D) Google Assistant"],
-    answer: "C) Alexa",
+    question: "What is the output of the following code: function factorial(n) { if (n <= 1) return 1; return n * factorial(n - 1); } factorial(5);",
+    options: ["A) 24", "B) 120", "C) 720", "D) 6"],
+    answer: "B) 120",
     timer: 30
   },
   {
-    question: "What does 'CPU' stand for in computer terminology?",
-    options: ["A) Central Processing Unit", "B) Computer Processing Unit", "C) Control Processing Unit", "D) Core Processing Unit"],
-    answer: "A) Central Processing Unit",
+    question: "In the context of recursion, what is a stack overflow?",
+    options: ["A) When the recursion doesn't terminate", "B) When the recursion runs too quickly", "C) When there are too many recursive calls and the stack memory is exhausted", "D) When the base case is not defined"],
+    answer: "C) When there are too many recursive calls and the stack memory is exhausted",
     timer: 30
   },
   {
-    question: "Which computer memory is directly accessible by the CPU and stores data and instructions that are currently being executed?",
-    options: ["A) Cache Memory", "B) Hard Disk Drive (HDD)", "C) Random Access Memory (RAM)", "D) Solid State Drive (SSD)"],
-    answer: "A) Cache Memory",
+    question: "What is the result of calling the following function: function fibonacci(n) { if (n <= 1) return n; return fibonacci(n - 1) + fibonacci(n - 2); } fibonacci(4);",
+    options: ["A) 1", "B) 2", "C) 3", "D) 5"],
+    answer: "C) 3",
     timer: 30
   },
   {
-    question: "What is the term for a collection of interconnected computers or devices that can communicate and share resources?",
-    options: ["A) Intranet", "B) Internet", "C) Network", "D) Web"],
-    answer: "C) Network",
+    question: "Which of the following is true about recursion?",
+    options: ["A) It can sometimes lead to stack overflow", "B) It always uses more memory than iteration", "C) It is never used in practical applications", "D) It is slower than iterative solutions"],
+    answer: "A) It can sometimes lead to stack overflow",
     timer: 30
   },
   {
-    question: "In computer history, what is the name of the first mass-produced personal computer, launched in 1977?",
-    options: ["A) IBM PC", "B) Apple I", "C) Commodore 64", "D) Apple II"],
-    answer: "D) Apple II",
+    question: "What is tail recursion?",
+    options: ["A) A recursive function where the recursive call is the last operation in the function", "B) A recursive function that never terminates", "C) A recursive function that calls itself more than once", "D) A recursive function with a very large number of recursive calls"],
+    answer: "A) A recursive function where the recursive call is the last operation in the function",
     timer: 30
   },
   {
-    question: "Name the search engine developed by Microsoft and a competitor to Google Search.",
-    options: ["A) Google Search", "B) Bing", "C) Yahoo Search", "D) DuckDuckGo"],
-    answer: "B) Bing",
+    question: "Consider the following function: function countDown(n) { if (n <= 0) { console.log('Done'); return; } console.log(n); countDown(n - 1); } What will be the output of countDown(3)?",
+    options: ["A) 3 2 1 0", "B) 3 2 1 Done", "C) 3 2 1", "D) Done"],
+    answer: "B) 3 2 1 Done",
     timer: 30
   },
   {
-    question: "What is the time complexity of performing a linear search on an array of n elements?",
-    options: ["A) O(log n)", "B) O(n^2)", "C) O(1)", "D) O(n)"],
-    answer: "D) O(n)",
+    question: "Which of the following is a disadvantage of recursion?",
+    options: ["A) It can be more difficult to understand", "B) It can use more memory due to the call stack", "C) It can be slower for large inputs", "D) All of the above"],
+    answer: "D) All of the above",
     timer: 30
   },
   {
-    question: "In a binary search tree, which node is located at the top of the tree and does not have a parent?",
-    options: ["A) Leaf Node", "B) Internal Node", "C) Root Node", "D) Child Node"],
-    answer: "C) Root Node",
+    question: "In the context of recursion, what is a 'recursive case'?",
+    options: ["A) The case where the function calls itself", "B) The case where the function returns a value", "C) The case where the function terminates", "D) The case where the function throws an error"],
+    answer: "A) The case where the function calls itself",
     timer: 30
   },
   {
-    question: "In a relational database, what is a table row called?",
-    options: ["A) Field", "B) Record", "C) Attribute", "D) Tuple"],
-    answer: "D) Tuple",
+    question: "What is the result of calling the following function: function sum(n) { if (n <= 0) return 0; return n + sum(n - 1); } sum(4);",
+    options: ["A) 10", "B) 6", "C) 4", "D) 0"],
+    answer: "A) 10",
     timer: 30
   },
   {
-    question: "Which technology allows users to interact with computers using gestures, voice commands, and eye tracking, eliminating the need for traditional input devices?",
-    options: ["A) Artificial Intelligence (AI)", "B) Virtual Reality (VR)", "C) Natural User Interface (NUI)", "D) Internet of Things (IoT)"],
-    answer: "C) Natural User Interface (NUI)",
-    timer: 30
-  },
-  {
-    question: "What is the process of converting human-readable code into machine code, which can be executed by a computer processor?",
-    options: ["A) Compilation", "B) Interpretation", "C) Debugging", "D) Optimization"],
-    answer: "A) Compilation",
-    timer: 30
-  },
-  {
-    question: "Which type of CPU architecture uses a single processor for all tasks and instructions?",
-    options: ["A) Multi-core Architecture", "B) Single-core Architecture", "C) Dual-core Architecture", "D) Quad-core Architecture"],
-    answer: "B) Single-core Architecture",
-    timer: 30
-  },
-  {
-    question: "What is the process of dividing a large problem into smaller, more manageable subproblems and solving each subproblem independently?",
-    options: ["A) Abstraction", "B) Encapsulation", "C) Polymorphism", "D) Divide and Conquer"],
-    answer: "D) Divide and Conquer",
-    timer: 30
-  },
-  {
-    question: "Name the process of ensuring that a website or web application functions correctly across different browsers and devices.",
-    options: ["A) Cross-Browser Testing", "B) Web Accessibility", "C) Performance Optimization", "D) Responsive Design"],
-    answer: "A) Cross-Browser Testing",
-    timer: 30
-  },
-  {
-    question: "In version control systems, what is the action of combining changes from one branch into another branch called?",
-    options: ["A) Merge", "B) Commit", "C) Branch", "D) Pull Request"],
-    answer: "A) Merge",
+    question: "Why is it important to define a base case in a recursive function?",
+    options: ["A) To avoid infinite recursion", "B) To ensure the function runs faster", "C) To make the function easier to read", "D) To use less memory"],
+    answer: "A) To avoid infinite recursion",
     timer: 30
   }
 ];
-
-// Shuffle the questions randomly
-questions.sort(() => Math.random() - 0.5);
-
 
 
  
