@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> Recursion Function </title>
+  <title> Backtracking in DSA </title>
   <style>
   
     #loader {
@@ -218,11 +218,11 @@ font-family: "Palatino Linotype", serif;
 
   <div class="top-bar">
     <div class="top-bar-inner">
-      <div class="logo">@CompetitiveCommunity</div>
+      <div class="logo">@Creators Community</div>
       <div class="tagline">Test your tech knowledge</div>
     </div>
   </div>
-  <h1> Recursive Function </h1>
+  <h1> Backtracking in DSA </h1>
   <div id="quiz-container">
     <div id="question-container"></div>
     <div id="options-container"></div>
@@ -239,99 +239,99 @@ font-family: "Palatino Linotype", serif;
         loader.classList.add('hidden');
       }, 1000);
     });
-    
 const questions = [
   {
-    question: "What is recursion in computer programming?",
-    options: ["A) A function calling itself", "B) A loop inside a function", "C) A function calling another function", "D) A nested loop"],
-    answer: "A) A function calling itself",
+    question: "What is backtracking in computer programming?",
+    options: ["A) A technique for solving problems by trying out different solutions and undoing them if they are not suitable", "B) A technique for sorting arrays", "C) A technique for searching data in a database", "D) A technique for encrypting data"],
+    answer: "A) A technique for solving problems by trying out different solutions and undoing them if they are not suitable",
     timer: 30
   },
   {
-    question: "What is the base case in recursion?",
-    options: ["A) The condition for the loop to end", "B) The starting point of the function", "C) The condition where the function stops calling itself", "D) The default value of the function"],
-    answer: "C) The condition where the function stops calling itself",
-    timer: 30
-  },
-  {
-    question: "Which of the following is an example of a recursive function?",
-    options: ["A) function factorial(n) { if (n <= 1) return 1; return n * factorial(n - 1); }", "B) function sum(a, b) { return a + b; }", "C) function multiply(a, b) { return a * b; }", "D) function loop(n) { for (let i = 0; i < n; i++) { console.log(i); } }"],
-    answer: "A) function factorial(n) { if (n <= 1) return 1; return n * factorial(n - 1); }",
-    timer: 30
-  },
-  {
-    question: "What is the purpose of the base case in a recursive function?",
-    options: ["A) To initialize variables", "B) To perform the recursive call", "C) To terminate the recursive calls", "D) To print the result"],
-    answer: "C) To terminate the recursive calls",
-    timer: 30
-  },
-  {
-    question: "Which of the following problems can be solved using recursion?",
-    options: ["A) Factorial of a number", "B) Finding the nth Fibonacci number", "C) Tower of Hanoi", "D) All of the above"],
+    question: "Which of the following problems can be solved using backtracking?",
+    options: ["A) N-Queens problem", "B) Sudoku solver", "C) Subset sum problem", "D) All of the above"],
     answer: "D) All of the above",
     timer: 30
   },
   {
-    question: "What is the output of the following code: function factorial(n) { if (n <= 1) return 1; return n * factorial(n - 1); } factorial(5);",
-    options: ["A) 24", "B) 120", "C) 720", "D) 6"],
-    answer: "B) 120",
+    question: "What is the base case in backtracking?",
+    options: ["A) The condition where the problem is solved", "B) The initial call to the backtracking function", "C) The condition to prune a branch", "D) The starting point of the function"],
+    answer: "A) The condition where the problem is solved",
     timer: 30
   },
   {
-    question: "In the context of recursion, what is a stack overflow?",
-    options: ["A) When the recursion doesn't terminate", "B) When the recursion runs too quickly", "C) When there are too many recursive calls and the stack memory is exhausted", "D) When the base case is not defined"],
-    answer: "C) When there are too many recursive calls and the stack memory is exhausted",
+    question: "Which data structure is commonly used to implement backtracking algorithms?",
+    options: ["A) Stack", "B) Queue", "C) Linked List", "D) Hash Table"],
+    answer: "A) Stack",
     timer: 30
   },
   {
-    question: "What is the result of calling the following function: function fibonacci(n) { if (n <= 1) return n; return fibonacci(n - 1) + fibonacci(n - 2); } fibonacci(4);",
-    options: ["A) 1", "B) 2", "C) 3", "D) 5"],
-    answer: "C) 3",
+    question: "What is the output of the following code for solving the N-Queens problem for N=4? (Assuming the code correctly implements the backtracking algorithm)",
+    options: ["A) One of the solutions to place 4 queens on a 4x4 board", "B) The total number of solutions for placing 4 queens", "C) An error message", "D) A single solution without checking for all possibilities"],
+    answer: "A) One of the solutions to place 4 queens on a 4x4 board",
     timer: 30
   },
   {
-    question: "Which of the following is true about recursion?",
-    options: ["A) It can sometimes lead to stack overflow", "B) It always uses more memory than iteration", "C) It is never used in practical applications", "D) It is slower than iterative solutions"],
-    answer: "A) It can sometimes lead to stack overflow",
+    question: "What is the primary advantage of using backtracking?",
+    options: ["A) It guarantees an optimal solution", "B) It is always the fastest method", "C) It is simple to implement", "D) It can find all possible solutions"],
+    answer: "D) It can find all possible solutions",
     timer: 30
   },
   {
-    question: "What is tail recursion?",
-    options: ["A) A recursive function where the recursive call is the last operation in the function", "B) A recursive function that never terminates", "C) A recursive function that calls itself more than once", "D) A recursive function with a very large number of recursive calls"],
-    answer: "A) A recursive function where the recursive call is the last operation in the function",
+    question: "In the context of backtracking, what does 'pruning' mean?",
+    options: ["A) Ignoring branches that cannot possibly lead to a solution", "B) Visiting every node in the search tree", "C) Always trying the first option", "D) Reducing the size of the input"],
+    answer: "A) Ignoring branches that cannot possibly lead to a solution",
     timer: 30
   },
   {
-    question: "Consider the following function: function countDown(n) { if (n <= 0) { console.log('Done'); return; } console.log(n); countDown(n - 1); } What will be the output of countDown(3)?",
-    options: ["A) 3 2 1 0", "B) 3 2 1 Done", "C) 3 2 1", "D) Done"],
-    answer: "B) 3 2 1 Done",
+    question: "Which of the following is an example of a backtracking algorithm?",
+    options: ["A) Depth-First Search", "B) Breadth-First Search", "C) Dijkstra's Algorithm", "D) Prim's Algorithm"],
+    answer: "A) Depth-First Search",
     timer: 30
   },
   {
-    question: "Which of the following is a disadvantage of recursion?",
-    options: ["A) It can be more difficult to understand", "B) It can use more memory due to the call stack", "C) It can be slower for large inputs", "D) All of the above"],
-    answer: "D) All of the above",
+    question: "What is the purpose of the 'constraint' function in backtracking?",
+    options: ["A) To check whether a partial solution can be extended to a complete solution", "B) To initialize the solution space", "C) To iterate through all possible solutions", "D) To terminate the algorithm"],
+    answer: "A) To check whether a partial solution can be extended to a complete solution",
     timer: 30
   },
   {
-    question: "In the context of recursion, what is a 'recursive case'?",
-    options: ["A) The case where the function calls itself", "B) The case where the function returns a value", "C) The case where the function terminates", "D) The case where the function throws an error"],
-    answer: "A) The case where the function calls itself",
+    question: "How does backtracking differ from brute-force search?",
+    options: ["A) Backtracking tries to improve efficiency by eliminating some possibilities", "B) Backtracking always finds the optimal solution", "C) Backtracking does not guarantee finding a solution", "D) Backtracking does not use recursion"],
+    answer: "A) Backtracking tries to improve efficiency by eliminating some possibilities",
     timer: 30
   },
   {
-    question: "What is the result of calling the following function: function sum(n) { if (n <= 0) return 0; return n + sum(n - 1); } sum(4);",
-    options: ["A) 10", "B) 6", "C) 4", "D) 0"],
-    answer: "A) 10",
+    question: "Consider the following pseudocode: function solve(problem) { if (problem is solved) { return solution; } for each option in problem { make choice; solve(problem with choice); undo choice; } } What is the purpose of 'undo choice' in backtracking?",
+    options: ["A) To reset the problem to its previous state before trying another option", "B) To ensure the solution is optimal", "C) To increase the speed of the algorithm", "D) To initialize the solution space"],
+    answer: "A) To reset the problem to its previous state before trying another option",
     timer: 30
   },
   {
-    question: "Why is it important to define a base case in a recursive function?",
-    options: ["A) To avoid infinite recursion", "B) To ensure the function runs faster", "C) To make the function easier to read", "D) To use less memory"],
-    answer: "A) To avoid infinite recursion",
+    question: "What is the result of calling the following backtracking function: function permute(arr, l, r) { if (l == r) { print(arr); } else { for (let i = l; i <= r; i++) { swap(arr[l], arr[i]); permute(arr, l + 1, r); swap(arr[l], arr[i]); } } } permute([1, 2, 3], 0, 2);",
+    options: ["A) All possible permutations of the array [1, 2, 3]", "B) The array sorted in ascending order", "C) The array sorted in descending order", "D) The first permutation of the array [1, 2, 3]"],
+    answer: "A) All possible permutations of the array [1, 2, 3]",
+    timer: 30
+  },
+  {
+    question: "What is the main drawback of using backtracking algorithms?",
+    options: ["A) They can be very slow for large input sizes", "B) They always require a lot of memory", "C) They are not guaranteed to find a solution", "D) They are difficult to understand"],
+    answer: "A) They can be very slow for large input sizes",
+    timer: 30
+  },
+  {
+    question: "What is the result of calling the following function to solve the subset sum problem: function subsetSum(set, n, sum) { if (sum == 0) return true; if (n == 0 && sum != 0) return false; if (set[n-1] > sum) return subsetSum(set, n-1, sum); return subsetSum(set, n-1, sum) || subsetSum(set, n-1, sum-set[n-1]); } subsetSum([3, 34, 4, 12, 5, 2], 6, 9);",
+    options: ["A) true", "B) false", "C) 0", "D) 9"],
+    answer: "A) true",
+    timer: 30
+  },
+  {
+    question: "Why is it important to define constraints in a backtracking algorithm?",
+    options: ["A) To avoid unnecessary computation by pruning branches that cannot lead to a solution", "B) To ensure the algorithm runs faster", "C) To make the algorithm easier to understand", "D) To use less memory"],
+    answer: "A) To avoid unnecessary computation by pruning branches that cannot lead to a solution",
     timer: 30
   }
 ];
+
 
 
  
