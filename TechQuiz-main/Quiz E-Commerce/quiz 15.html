@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> Recursion Function </title>
+  <title> Permuration of a Given string </title>
   <style>
-  
     #loader {
       position: fixed;
       top: 0;
@@ -24,7 +23,6 @@
       pointer-events: none;
     }
 
-
     .spinner {
       width: 40px;
       height: 40px;
@@ -42,7 +40,6 @@
         transform: rotate(360deg);
       }
     }
-
 
     .top-bar {
       background-color: #333;
@@ -64,7 +61,7 @@
       font-weight: bold;
       font-family: 'Brush Script MT', cursive;
       margin-right: auto;
-  margin-right: 200px; 
+      margin-right: 200px;
     }
 
     .tagline {
@@ -73,16 +70,13 @@
       font-family: Garamond, serif;
     }
 
-   
     h1 {
       text-align: center;
       color: #4caf50;
       font-size: 42px;
-font-family: Garamond, serif;
-      
+      font-family: Garamond, serif;
       margin-bottom: 20px;
     }
-
 
     #result-container {
       text-align: center;
@@ -110,27 +104,28 @@ font-family: Garamond, serif;
       color: #666;
     }
 
-#result-container .wrong-answers {
-  color:red;
+    #result-container .wrong-answers {
+      color: red;
+    }
 
-}
-#result-container .correct-answers {
-  color: rgb(49, 230, 13);}
+    #result-container .correct-answers {
+      color: rgb(49, 230, 13);
+    }
 
     #quiz-container {
-  max-width: 800px; 
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f2f2f2;
-  border-radius: 5px;
-}
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+    }
 
-   #question-container {
-  margin-bottom: 20px;
-  font-family: "Palatino Linotype", serif; 
-font-size: 1.2em;
-font-weight: bold;
-}
+    #question-container {
+      margin-bottom: 20px;
+      font-family: "Palatino Linotype", serif;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
 
     #options-container button {
       display: block;
@@ -141,8 +136,8 @@ font-weight: bold;
       border: 1px solid #ddd;
       border-radius: 3px;
       cursor: pointer;
-font-size: 1em;
-font-family: "Palatino Linotype", serif; 
+      font-size: 1em;
+      font-family: "Palatino Linotype", serif;
     }
 
     #options-container button.correct {
@@ -176,24 +171,25 @@ font-family: "Palatino Linotype", serif;
       background-color: #45a049;
     }
 
-#timer {
-  text-align: right; 
-  margin-top: 10px; 
-  font-family: Arial, sans-serif; 
-  font-size: 14px; 
-}
+    #timer {
+      text-align: right;
+      margin-top: 10px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
 
     #result-container {
       text-align: center;
       font-weight: bold;
     }
-    
-.CodeMirror-cursor {
-  border-left: 1px solid black;
-  border-right: none;
-  width: 0;
-    
- footer {
+
+    .CodeMirror-cursor {
+      border-left: 1px solid black;
+      border-right: none;
+      width: 0;
+    }
+
+    footer {
       background-color: #333;
       color: #fff;
       padding: 10px;
@@ -206,263 +202,198 @@ font-family: "Palatino Linotype", serif;
     footer p {
       margin: 0;
     }
-    
   </style>
 </head>
 <body>
-
- 
   <div id="loader">
     <div class="spinner"></div>
   </div>
-
   <div class="top-bar">
     <div class="top-bar-inner">
       <div class="logo">@CompetitiveCommunity</div>
       <div class="tagline">Test your tech knowledge</div>
     </div>
   </div>
-  <h1> Recursive Function </h1>
+  <h1> Permuration of a Given string </h1>
   <div id="quiz-container">
     <div id="question-container"></div>
     <div id="options-container"></div>
     <div id="timer">Time left: <span id="time-left"></span> seconds</div>
     <button id="submit-btn">End & Submit</button>
   </div>
-  
   <script>
-
-// JavaScript to hide the loader after 2 seconds
+    // JavaScript to hide the loader after 2 seconds
     window.addEventListener('load', function() {
       const loader = document.getElementById('loader');
       setTimeout(function() {
         loader.classList.add('hidden');
       }, 1000);
     });
-    
-const questions = [
+   const questions = [
   {
-    question: "What is recursion in computer programming?",
-    options: ["A) A function calling itself", "B) A loop inside a function", "C) A function calling another function", "D) A nested loop"],
-    answer: "A) A function calling itself",
+    question: "What is the purpose of backtracking in generating permutations of a string?",
+    options: ["A) To avoid redundant calculations", "B) To ensure all possible permutations are generated", "C) To sort the permutations", "D) To count the number of permutations"],
+    answer: "B) To ensure all possible permutations are generated",
     timer: 30
   },
   {
-    question: "What is the base case in recursion?",
-    options: ["A) The condition for the loop to end", "B) The starting point of the function", "C) The condition where the function stops calling itself", "D) The default value of the function"],
-    answer: "C) The condition where the function stops calling itself",
+    question: "Which data structure is commonly used to store characters of a string during permutation generation?",
+    options: ["A) Stack", "B) Queue", "C) Array", "D) Linked List"],
+    answer: "C) Array",
     timer: 30
   },
   {
-    question: "Which of the following is an example of a recursive function?",
-    options: ["A) function factorial(n) { if (n <= 1) return 1; return n * factorial(n - 1); }", "B) function sum(a, b) { return a + b; }", "C) function multiply(a, b) { return a * b; }", "D) function loop(n) { for (let i = 0; i < n; i++) { console.log(i); } }"],
-    answer: "A) function factorial(n) { if (n <= 1) return 1; return n * factorial(n - 1); }",
+    question: "What is the base case for generating permutations using backtracking?",
+    options: ["A) When the string is sorted", "B) When all characters are used", "C) When the string is empty", "D) When the recursion depth is maximum"],
+    answer: "B) When all characters are used",
     timer: 30
   },
   {
-    question: "What is the purpose of the base case in a recursive function?",
-    options: ["A) To initialize variables", "B) To perform the recursive call", "C) To terminate the recursive calls", "D) To print the result"],
-    answer: "C) To terminate the recursive calls",
+    question: "What does the swap operation achieve in the context of string permutations?",
+    options: ["A) It reverses the string", "B) It selects a character for the current position", "C) It sorts the characters", "D) It removes duplicates"],
+    answer: "B) It selects a character for the current position",
     timer: 30
   },
   {
-    question: "Which of the following problems can be solved using recursion?",
-    options: ["A) Factorial of a number", "B) Finding the nth Fibonacci number", "C) Tower of Hanoi", "D) All of the above"],
-    answer: "D) All of the above",
+    question: "In the permutation algorithm, what is the role of the 'backtrack' step?",
+    options: ["A) To move forward in the recursion", "B) To undo the last swap operation", "C) To sort the characters", "D) To find duplicates"],
+    answer: "B) To undo the last swap operation",
     timer: 30
   },
   {
-    question: "What is the output of the following code: function factorial(n) { if (n <= 1) return 1; return n * factorial(n - 1); } factorial(5);",
-    options: ["A) 24", "B) 120", "C) 720", "D) 6"],
-    answer: "B) 120",
+    question: "How do you handle duplicate characters in the string to avoid generating duplicate permutations?",
+    options: ["A) Use a set to store unique permutations", "B) Skip the duplicate characters during recursion", "C) Sort the string and skip duplicate characters in the loop", "D) Use a hash map"],
+    answer: "C) Sort the string and skip duplicate characters in the loop",
     timer: 30
   },
   {
-    question: "In the context of recursion, what is a stack overflow?",
-    options: ["A) When the recursion doesn't terminate", "B) When the recursion runs too quickly", "C) When there are too many recursive calls and the stack memory is exhausted", "D) When the base case is not defined"],
-    answer: "C) When there are too many recursive calls and the stack memory is exhausted",
+    question: "What is the time complexity of generating all permutations of a string of length n using backtracking?",
+    options: ["A) O(n)", "B) O(n^2)", "C) O(n!)", "D) O(2^n)"],
+    answer: "C) O(n!)",
     timer: 30
   },
   {
-    question: "What is the result of calling the following function: function fibonacci(n) { if (n <= 1) return n; return fibonacci(n - 1) + fibonacci(n - 2); } fibonacci(4);",
-    options: ["A) 1", "B) 2", "C) 3", "D) 5"],
-    answer: "C) 3",
+    question: "What is the space complexity of generating permutations using backtracking?",
+    options: ["A) O(n)", "B) O(n^2)", "C) O(n!)", "D) O(2^n)"],
+    answer: "A) O(n)",
     timer: 30
   },
   {
-    question: "Which of the following is true about recursion?",
-    options: ["A) It can sometimes lead to stack overflow", "B) It always uses more memory than iteration", "C) It is never used in practical applications", "D) It is slower than iterative solutions"],
-    answer: "A) It can sometimes lead to stack overflow",
+    question: "Which of the following is a correct recursive function signature for generating permutations?",
+    options: ["A) void permute(String str)", "B) void permute(String str, int l, int r)", "C) void permute(int n)", "D) void permute(String str, char c)"],
+    answer: "B) void permute(String str, int l, int r)",
     timer: 30
   },
   {
-    question: "What is tail recursion?",
-    options: ["A) A recursive function where the recursive call is the last operation in the function", "B) A recursive function that never terminates", "C) A recursive function that calls itself more than once", "D) A recursive function with a very large number of recursive calls"],
-    answer: "A) A recursive function where the recursive call is the last operation in the function",
+    question: "What does the 'l' and 'r' represent in the function signature void permute(String str, int l, int r)?",
+    options: ["A) Left and right indices of the string", "B) Length of the string", "C) Loop counters", "D) Characters of the string"],
+    answer: "A) Left and right indices of the string",
     timer: 30
   },
   {
-    question: "Consider the following function: function countDown(n) { if (n <= 0) { console.log('Done'); return; } console.log(n); countDown(n - 1); } What will be the output of countDown(3)?",
-    options: ["A) 3 2 1 0", "B) 3 2 1 Done", "C) 3 2 1", "D) Done"],
-    answer: "B) 3 2 1 Done",
+    question: "When generating permutations, when do you print the string?",
+    options: ["A) At every recursive call", "B) When a swap is performed", "C) When the left index equals the right index", "D) When the string is sorted"],
+    answer: "C) When the left index equals the right index",
     timer: 30
   },
   {
-    question: "Which of the following is a disadvantage of recursion?",
-    options: ["A) It can be more difficult to understand", "B) It can use more memory due to the call stack", "C) It can be slower for large inputs", "D) All of the above"],
-    answer: "D) All of the above",
+    question: "Which of the following steps is crucial to backtracking?",
+    options: ["A) Printing the result", "B) Swapping characters back to their original position", "C) Sorting the string", "D) Counting permutations"],
+    answer: "B) Swapping characters back to their original position",
     timer: 30
   },
   {
-    question: "In the context of recursion, what is a 'recursive case'?",
-    options: ["A) The case where the function calls itself", "B) The case where the function returns a value", "C) The case where the function terminates", "D) The case where the function throws an error"],
-    answer: "A) The case where the function calls itself",
+    question: "What is the output of the following code: permute('abc', 0, 2)?",
+    options: ["A) ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']", "B) ['abc', 'bca', 'cab']", "C) ['abc', 'acb']", "D) ['abc', 'bac']"],
+    answer: "A) ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']",
     timer: 30
   },
   {
-    question: "What is the result of calling the following function: function sum(n) { if (n <= 0) return 0; return n + sum(n - 1); } sum(4);",
-    options: ["A) 10", "B) 6", "C) 4", "D) 0"],
-    answer: "A) 10",
+    question: "What is the main advantage of using backtracking for generating permutations?",
+    options: ["A) It is faster than other methods", "B) It uses less memory", "C) It systematically explores all possibilities", "D) It avoids using loops"],
+    answer: "C) It systematically explores all possibilities",
     timer: 30
   },
   {
-    question: "Why is it important to define a base case in a recursive function?",
-    options: ["A) To avoid infinite recursion", "B) To ensure the function runs faster", "C) To make the function easier to read", "D) To use less memory"],
-    answer: "A) To avoid infinite recursion",
+    question: "How can you optimize the permutation generation algorithm to handle large input strings efficiently?",
+    options: ["A) Using iterative methods", "B) Avoiding duplicate calculations with memoization", "C) Skipping recursive calls", "D) Using a stack-based approach"],
+    answer: "B) Avoiding duplicate calculations with memoization",
     timer: 30
   }
 ];
 
-
- 
-let currentQuestionIndex = 0;
+    let currentQuestionIndex = 0;
     let score = 0;
-    let timer;
-
-    const quizContainer = document.getElementById("quiz-container");
-    const questionContainer = document.getElementById("question-container");
-    const optionsContainer = document.getElementById("options-container");
-    const timerContainer = document.getElementById("time-left");
-    const submitButton = document.getElementById("submit-btn");
-
-    function startQuiz() {
-      displayQuestion();
+    let timeLeft = questions[0].timer;
+    const questionContainer = document.getElementById('question-container');
+    const optionsContainer = document.getElementById('options-container');
+    const timerElement = document.getElementById('time-left');
+    const submitButton = document.getElementById('submit-btn');
+    const resultContainer = document.getElementById('result-container');
+    function loadQuestion() {
+      const question = questions[currentQuestionIndex];
+      questionContainer.textContent = question.question;
+      optionsContainer.innerHTML = '';
+      question.options.forEach(option => {
+        const button = document.createElement('button');
+        button.textContent = option;
+        button.addEventListener('click', () => {
+          selectOption(button, option === question.answer);
+        });
+        optionsContainer.appendChild(button);
+      });
+      timeLeft = question.timer;
+      timerElement.textContent = timeLeft;
     }
-
-    function displayQuestion() {
-      const currentQuestion = questions[currentQuestionIndex];
-      questionContainer.textContent = currentQuestion.question;
-      optionsContainer.innerHTML = "";
-
-      for (let i = 0; i < currentQuestion.options.length; i++) {
-        const option = document.createElement("button");
-        option.textContent = currentQuestion.options[i];
-        option.addEventListener("click", checkAnswer);
-        optionsContainer.appendChild(option);
+    function selectOption(button, isCorrect) {
+      const buttons = optionsContainer.querySelectorAll('button');
+      buttons.forEach(btn => {
+        btn.disabled = true;
+        if (btn.textContent === questions[currentQuestionIndex].answer) {
+          btn.classList.add('correct');
+        } else {
+          btn.classList.add('wrong');
+        }
+      });
+      if (isCorrect) {
+        score++;
       }
-
-      startTimer(currentQuestion.timer);
-    }
-
-    function startTimer(time) {
-      let timeLeft = time;
-      updateTimerDisplay(timeLeft);
-
-      timer = setInterval(() => {
-        timeLeft--;
-        updateTimerDisplay(timeLeft);
-
-        if (timeLeft === 0) {
-          clearInterval(timer);
-          displayNextQuestion();
+      setTimeout(() => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+          loadQuestion();
+        } else {
+          showResult();
         }
       }, 1000);
     }
-
-    function updateTimerDisplay(timeLeft) {
-      if (timeLeft >= 0) {
-        timerContainer.textContent = timeLeft;
-      }
-    }
-
-    function checkAnswer(event) {
-      const selectedOption = event.target.textContent;
-      const currentQuestion = questions[currentQuestionIndex];
-
-      if (selectedOption === currentQuestion.answer) {
-        score++;
-      }
-
-      clearInterval(timer);
-      displayNextQuestion();
-    }
-
-    function displayNextQuestion() {
-      currentQuestionIndex++;
-
-      if (currentQuestionIndex < questions.length) {
-        displayQuestion();
-      } else {
-        endQuiz();
-      }
-    }
-
- 
-    function endQuiz() {
-      clearInterval(timer);
-
-      const quizContainer = document.getElementById("quiz-container");
-      quizContainer.style.display = "none";
-
-      const resultContainer = document.createElement("div");
-      resultContainer.id = "result-container";
-
-      const correctAnswers = score;
-      const wrongAnswers = questions.length - score;
-
-      let comment;
-
-      if (score === 30) {
-        comment = "Congratulations! You scored a perfect 30/30!";
-      } else if (score >= 25) {
-        comment = "Great job! You have excellent knowledge!";
-      } else if (score >= 20) {
-        comment = "Well done! You have a solid understanding!";
-      } else if (score >= 15) {
-        comment = "Good effort! You have a good grasp of the concepts!";
-      } else if (score >= 10) {
-        comment = "Nice attempt! Keep learning to improve your knowledge!";
-      } else if (score >= 5) {
-        comment = "Not bad! You have some basic understanding!";
-      } else if (score >= 1) {
-        comment = "You can do better! Keep practicing and learning!";
-      } else {
-        comment = "Oops! Better luck next time! Keep learning!";
-      }
-
+    function showResult() {
+      questionContainer.innerHTML = '';
+      optionsContainer.innerHTML = '';
+      const resultContainer = document.createElement('div');
+      resultContainer.id = 'result-container';
       resultContainer.innerHTML = `
-        <p>Your score: <span>${score}</span> out of <span>${questions.length}</span></p>
-        <p>Correct Answers: <span class="correct-answers">${correctAnswers}</span></p>
-        <p>Wrong Answers: <span class="wrong-answers">${wrongAnswers}</span></p>
-        <p class="comment">${comment}</p>
+        <p>Your Score: ${score} / ${questions.length}</p>
+        <div class="comment">
+          ${score === questions.length ? 'Excellent!' : score >= questions.length / 2 ? 'Good Job!' : 'Better Luck Next Time!'}
+        </div>
       `;
-
-      const parentContainer = document.getElementById("quiz-container").parentNode;
-      parentContainer.insertBefore(resultContainer, quizContainer.nextSibling);
+      document.getElementById('quiz-container').appendChild(resultContainer);
     }
-
-    window.addEventListener('load', function() {
-    const loader = document.getElementById('loader');
-    setTimeout(function() {
-      loader.classList.add('hidden');
-    }, 1000);
-
-    const submitButton = document.getElementById('submit-btn');
-    submitButton.addEventListener('click', endQuiz);
-    });
-
-    startQuiz();
-    
+    function startTimer() {
+      const timerInterval = setInterval(() => {
+        if (timeLeft > 0) {
+          timeLeft--;
+          timerElement.textContent = timeLeft;
+        } else {
+          clearInterval(timerInterval);
+          selectOption(null, false);
+        }
+      }, 1000);
+    }
+    loadQuestion();
+    startTimer();
+    submitButton.addEventListener('click', showResult);
   </script>
 </body>
 </html>
