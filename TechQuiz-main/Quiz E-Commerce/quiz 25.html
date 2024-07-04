@@ -229,68 +229,99 @@
         loader.classList.add('hidden');
       }, 1000);
     });
-    const questions = [
-      {
-        question: "What is recursion in computer programming?",
-        options: ["A) A function calling itself", "B) A loop inside a function", "C) A function calling another function", "D) A nested loop"],
-        answer: "A) A function calling itself",
-        timer: 30
-      },
-      {
-        question: "What is the base case in recursion?",
-        options: ["A) The condition for the loop to end", "B) The starting point of the function", "C) The condition where the function stops calling itself", "D) The default value of the function"],
-        answer: "C) The condition where the function stops calling itself",
-        timer: 30
-      },
-      {
-        question: "Which of the following is an example of a recursive function?",
-        options: ["A) function factorial(n) { if (n <= 1) return 1; return n * factorial(n - 1); }", "B) function sum(a, b) { return a + b; }", "C) function multiply(a, b) { return a * b; }", "D) function loop(n) { for (let i = 0; i < n; i++) { console.log(i); } }"],
-        answer: "A) function factorial(n) { if (n <= 1) return 1; return n * factorial(n - 1); }",
-        timer: 30
-      },
-      {
-        question: "What is the purpose of the base case in a recursive function?",
-        options: ["A) To initialize variables", "B) To perform the recursive call", "C) To terminate the recursive calls", "D) To print the result"],
-        answer: "C) To terminate the recursive calls",
-        timer: 30
-      },
-      {
-        question: "Which of the following problems can be solved using recursion?",
-        options: ["A) Factorial of a number", "B) Finding the nth Fibonacci number", "C) Tower of Hanoi", "D) All of the above"],
-        answer: "D) All of the above",
-        timer: 30
-      },
-      {
-        question: "What is the output of the following code: function factorial(n) { if (n <= 1) return 1; return n * factorial(n - 1); } factorial(5);",
-        options: ["A) 24", "B) 120", "C) 720", "D) 6"],
-        answer: "B) 120",
-        timer: 30
-      },
-      {
-        question: "In the context of recursion, what is a stack overflow?",
-        options: ["A) When the recursion doesn't terminate", "B) When the recursion runs too quickly", "C) When there are too many recursive calls and the stack memory is exhausted", "D) When the base case is not defined"],
-        answer: "C) When there are too many recursive calls and the stack memory is exhausted",
-        timer: 30
-      },
-      {
-        question: "Which of the following is an incorrect statement about recursion?",
-        options: ["A) Recursion can be used to solve complex problems", "B) Recursion always improves the performance of a program", "C) Recursion requires a base case to terminate", "D) Recursive functions can sometimes be converted to iterative solutions"],
-        answer: "B) Recursion always improves the performance of a program",
-        timer: 30
-      },
-      {
-        question: "What is the time complexity of the recursive Fibonacci function?",
-        options: ["A) O(1)", "B) O(n)", "C) O(n^2)", "D) O(2^n)"],
-        answer: "D) O(2^n)",
-        timer: 30
-      },
-      {
-        question: "What is the space complexity of the recursive Fibonacci function?",
-        options: ["A) O(1)", "B) O(n)", "C) O(n^2)", "D) O(2^n)"],
-        answer: "B) O(n)",
-        timer: 30
-      }
-    ];
+   const questions = [
+  {
+    question: "What is the purpose of backtracking in generating permutations of a string?",
+    options: ["A) To avoid redundant calculations", "B) To ensure all possible permutations are generated", "C) To sort the permutations", "D) To count the number of permutations"],
+    answer: "B) To ensure all possible permutations are generated",
+    timer: 30
+  },
+  {
+    question: "Which data structure is commonly used to store characters of a string during permutation generation?",
+    options: ["A) Stack", "B) Queue", "C) Array", "D) Linked List"],
+    answer: "C) Array",
+    timer: 30
+  },
+  {
+    question: "What is the base case for generating permutations using backtracking?",
+    options: ["A) When the string is sorted", "B) When all characters are used", "C) When the string is empty", "D) When the recursion depth is maximum"],
+    answer: "B) When all characters are used",
+    timer: 30
+  },
+  {
+    question: "What does the swap operation achieve in the context of string permutations?",
+    options: ["A) It reverses the string", "B) It selects a character for the current position", "C) It sorts the characters", "D) It removes duplicates"],
+    answer: "B) It selects a character for the current position",
+    timer: 30
+  },
+  {
+    question: "In the permutation algorithm, what is the role of the 'backtrack' step?",
+    options: ["A) To move forward in the recursion", "B) To undo the last swap operation", "C) To sort the characters", "D) To find duplicates"],
+    answer: "B) To undo the last swap operation",
+    timer: 30
+  },
+  {
+    question: "How do you handle duplicate characters in the string to avoid generating duplicate permutations?",
+    options: ["A) Use a set to store unique permutations", "B) Skip the duplicate characters during recursion", "C) Sort the string and skip duplicate characters in the loop", "D) Use a hash map"],
+    answer: "C) Sort the string and skip duplicate characters in the loop",
+    timer: 30
+  },
+  {
+    question: "What is the time complexity of generating all permutations of a string of length n using backtracking?",
+    options: ["A) O(n)", "B) O(n^2)", "C) O(n!)", "D) O(2^n)"],
+    answer: "C) O(n!)",
+    timer: 30
+  },
+  {
+    question: "What is the space complexity of generating permutations using backtracking?",
+    options: ["A) O(n)", "B) O(n^2)", "C) O(n!)", "D) O(2^n)"],
+    answer: "A) O(n)",
+    timer: 30
+  },
+  {
+    question: "Which of the following is a correct recursive function signature for generating permutations?",
+    options: ["A) void permute(String str)", "B) void permute(String str, int l, int r)", "C) void permute(int n)", "D) void permute(String str, char c)"],
+    answer: "B) void permute(String str, int l, int r)",
+    timer: 30
+  },
+  {
+    question: "What does the 'l' and 'r' represent in the function signature void permute(String str, int l, int r)?",
+    options: ["A) Left and right indices of the string", "B) Length of the string", "C) Loop counters", "D) Characters of the string"],
+    answer: "A) Left and right indices of the string",
+    timer: 30
+  },
+  {
+    question: "When generating permutations, when do you print the string?",
+    options: ["A) At every recursive call", "B) When a swap is performed", "C) When the left index equals the right index", "D) When the string is sorted"],
+    answer: "C) When the left index equals the right index",
+    timer: 30
+  },
+  {
+    question: "Which of the following steps is crucial to backtracking?",
+    options: ["A) Printing the result", "B) Swapping characters back to their original position", "C) Sorting the string", "D) Counting permutations"],
+    answer: "B) Swapping characters back to their original position",
+    timer: 30
+  },
+  {
+    question: "What is the output of the following code: permute('abc', 0, 2)?",
+    options: ["A) ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']", "B) ['abc', 'bca', 'cab']", "C) ['abc', 'acb']", "D) ['abc', 'bac']"],
+    answer: "A) ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']",
+    timer: 30
+  },
+  {
+    question: "What is the main advantage of using backtracking for generating permutations?",
+    options: ["A) It is faster than other methods", "B) It uses less memory", "C) It systematically explores all possibilities", "D) It avoids using loops"],
+    answer: "C) It systematically explores all possibilities",
+    timer: 30
+  },
+  {
+    question: "How can you optimize the permutation generation algorithm to handle large input strings efficiently?",
+    options: ["A) Using iterative methods", "B) Avoiding duplicate calculations with memoization", "C) Skipping recursive calls", "D) Using a stack-based approach"],
+    answer: "B) Avoiding duplicate calculations with memoization",
+    timer: 30
+  }
+];
+
     let currentQuestionIndex = 0;
     let score = 0;
     let timeLeft = questions[0].timer;
