@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> Recursion Function </title>
+  <title> Tree Traversal Techniques </title>
   <style>
   
     #loader {
@@ -239,102 +239,106 @@ font-family: "Palatino Linotype", serif;
         loader.classList.add('hidden');
       }, 1000);
     });
-    
-const questions = [
+ 
+ const questions = [
   {
-    question: "What is recursion in computer programming?",
-    options: ["A) A function calling itself", "B) A loop inside a function", "C) A function calling another function", "D) A nested loop"],
-    answer: "A) A function calling itself",
+    question: "What is a tree in computer science?",
+    options: ["A) A data structure consisting of nodes", "B) A type of algorithm", "C) A collection of functions", "D) A sequence of characters"],
+    answer: "A) A data structure consisting of nodes",
     timer: 30
   },
   {
-    question: "What is the base case in recursion?",
-    options: ["A) The condition for the loop to end", "B) The starting point of the function", "C) The condition where the function stops calling itself", "D) The default value of the function"],
-    answer: "C) The condition where the function stops calling itself",
+    question: "What is the root node in a tree?",
+    options: ["A) The node with no parent", "B) The node with the most children", "C) The node with the highest value", "D) The node with the lowest value"],
+    answer: "A) The node with no parent",
     timer: 30
   },
   {
-    question: "Which of the following is an example of a recursive function?",
-    options: ["A) function factorial(n) { if (n <= 1) return 1; return n * factorial(n - 1); }", "B) function sum(a, b) { return a + b; }", "C) function multiply(a, b) { return a * b; }", "D) function loop(n) { for (let i = 0; i < n; i++) { console.log(i); } }"],
-    answer: "A) function factorial(n) { if (n <= 1) return 1; return n * factorial(n - 1); }",
+    question: "What is an edge in a tree?",
+    options: ["A) A link between two nodes", "B) A node with no children", "C) A node with two parents", "D) A node with no parent"],
+    answer: "A) A link between two nodes",
     timer: 30
   },
   {
-    question: "What is the purpose of the base case in a recursive function?",
-    options: ["A) To initialize variables", "B) To perform the recursive call", "C) To terminate the recursive calls", "D) To print the result"],
-    answer: "C) To terminate the recursive calls",
+    question: "What is a leaf node?",
+    options: ["A) A node with no children", "B) A node with one child", "C) A node with two children", "D) A node with a parent"],
+    answer: "A) A node with no children",
     timer: 30
   },
   {
-    question: "Which of the following problems can be solved using recursion?",
-    options: ["A) Factorial of a number", "B) Finding the nth Fibonacci number", "C) Tower of Hanoi", "D) All of the above"],
+    question: "Which of the following is a type of tree traversal?",
+    options: ["A) In-order", "B) Pre-order", "C) Post-order", "D) All of the above"],
     answer: "D) All of the above",
     timer: 30
   },
   {
-    question: "What is the output of the following code: function factorial(n) { if (n <= 1) return 1; return n * factorial(n - 1); } factorial(5);",
-    options: ["A) 24", "B) 120", "C) 720", "D) 6"],
-    answer: "B) 120",
+    question: "In in-order traversal, in which order are the nodes visited?",
+    options: ["A) Left, Root, Right", "B) Root, Left, Right", "C) Left, Right, Root", "D) Right, Root, Left"],
+    answer: "A) Left, Root, Right",
     timer: 30
   },
   {
-    question: "In the context of recursion, what is a stack overflow?",
-    options: ["A) When the recursion doesn't terminate", "B) When the recursion runs too quickly", "C) When there are too many recursive calls and the stack memory is exhausted", "D) When the base case is not defined"],
-    answer: "C) When there are too many recursive calls and the stack memory is exhausted",
+    question: "In pre-order traversal, in which order are the nodes visited?",
+    options: ["A) Root, Left, Right", "B) Left, Root, Right", "C) Left, Right, Root", "D) Right, Root, Left"],
+    answer: "A) Root, Left, Right",
     timer: 30
   },
   {
-    question: "What is the result of calling the following function: function fibonacci(n) { if (n <= 1) return n; return fibonacci(n - 1) + fibonacci(n - 2); } fibonacci(4);",
-    options: ["A) 1", "B) 2", "C) 3", "D) 5"],
-    answer: "C) 3",
+    question: "In post-order traversal, in which order are the nodes visited?",
+    options: ["A) Left, Right, Root", "B) Root, Left, Right", "C) Left, Root, Right", "D) Right, Root, Left"],
+    answer: "A) Left, Right, Root",
     timer: 30
   },
   {
-    question: "Which of the following is true about recursion?",
-    options: ["A) It can sometimes lead to stack overflow", "B) It always uses more memory than iteration", "C) It is never used in practical applications", "D) It is slower than iterative solutions"],
-    answer: "A) It can sometimes lead to stack overflow",
+    question: "What is the purpose of tree traversal?",
+    options: ["A) To visit all nodes in a specific order", "B) To delete nodes", "C) To update nodes", "D) To search for a specific node"],
+    answer: "A) To visit all nodes in a specific order",
     timer: 30
   },
   {
-    question: "What is tail recursion?",
-    options: ["A) A recursive function where the recursive call is the last operation in the function", "B) A recursive function that never terminates", "C) A recursive function that calls itself more than once", "D) A recursive function with a very large number of recursive calls"],
-    answer: "A) A recursive function where the recursive call is the last operation in the function",
+    question: "What is a binary tree?",
+    options: ["A) A tree where each node has at most two children", "B) A tree where each node has at most one child", "C) A tree where each node has three children", "D) A tree with only one node"],
+    answer: "A) A tree where each node has at most two children",
     timer: 30
   },
   {
-    question: "Consider the following function: function countDown(n) { if (n <= 0) { console.log('Done'); return; } console.log(n); countDown(n - 1); } What will be the output of countDown(3)?",
-    options: ["A) 3 2 1 0", "B) 3 2 1 Done", "C) 3 2 1", "D) Done"],
-    answer: "B) 3 2 1 Done",
+    question: "Which of the following algorithms is used for tree traversal?",
+    options: ["A) Depth-First Search (DFS)", "B) Breadth-First Search (BFS)", "C) Both A and B", "D) None of the above"],
+    answer: "C) Both A and B",
     timer: 30
   },
   {
-    question: "Which of the following is a disadvantage of recursion?",
-    options: ["A) It can be more difficult to understand", "B) It can use more memory due to the call stack", "C) It can be slower for large inputs", "D) All of the above"],
-    answer: "D) All of the above",
+    question: "What is the difference between DFS and BFS in tree traversal?",
+    options: ["A) DFS explores as far as possible along each branch before backtracking; BFS explores all neighbors at the present depth prior to moving on to nodes at the next depth level", "B) BFS explores as far as possible along each branch before backtracking; DFS explores all neighbors at the present depth prior to moving on to nodes at the next depth level", "C) DFS and BFS are the same", "D) None of the above"],
+    answer: "A) DFS explores as far as possible along each branch before backtracking; BFS explores all neighbors at the present depth prior to moving on to nodes at the next depth level",
     timer: 30
   },
   {
-    question: "In the context of recursion, what is a 'recursive case'?",
-    options: ["A) The case where the function calls itself", "B) The case where the function returns a value", "C) The case where the function terminates", "D) The case where the function throws an error"],
-    answer: "A) The case where the function calls itself",
+    question: "What is the time complexity of DFS in a tree with n nodes?",
+    options: ["A) O(n)", "B) O(log n)", "C) O(n^2)", "D) O(1)"],
+    answer: "A) O(n)",
     timer: 30
   },
   {
-    question: "What is the result of calling the following function: function sum(n) { if (n <= 0) return 0; return n + sum(n - 1); } sum(4);",
-    options: ["A) 10", "B) 6", "C) 4", "D) 0"],
-    answer: "A) 10",
+    question: "What is the time complexity of BFS in a tree with n nodes?",
+    options: ["A) O(n)", "B) O(log n)", "C) O(n^2)", "D) O(1)"],
+    answer: "A) O(n)",
     timer: 30
   },
   {
-    question: "Why is it important to define a base case in a recursive function?",
-    options: ["A) To avoid infinite recursion", "B) To ensure the function runs faster", "C) To make the function easier to read", "D) To use less memory"],
-    answer: "A) To avoid infinite recursion",
+    question: "Which of the following is true about binary search trees (BST)?",
+    options: ["A) The left subtree of a node contains only nodes with keys less than the node's key", "B) The right subtree of a node contains only nodes with keys greater than the node's key", "C) Both A and B", "D) None of the above"],
+    answer: "C) Both A and B",
+    timer: 30
+  },
+  {
+    question: "What is the output of the following in-order traversal of a binary search tree? 10, 5, 1, 7, 40, 50",
+    options: ["A) 1, 5, 7, 10, 40, 50", "B) 10, 5, 1, 7, 40, 50", "C) 50, 40, 10, 7, 5, 1", "D) 7, 5, 10, 50, 40, 1"],
+    answer: "A) 1, 5, 7, 10, 40, 50",
     timer: 30
   }
 ];
 
-
- 
 let currentQuestionIndex = 0;
     let score = 0;
     let timer;
