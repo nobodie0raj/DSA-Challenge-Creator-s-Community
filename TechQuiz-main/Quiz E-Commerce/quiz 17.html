@@ -222,7 +222,7 @@ font-family: "Palatino Linotype", serif;
       <div class="tagline">Test your tech knowledge</div>
     </div>
   </div>
-  <h1> Recursive Function </h1>
+  <h1> BFS - Breadth First Search </h1>
   <div id="quiz-container">
     <div id="question-container"></div>
     <div id="options-container"></div>
@@ -242,97 +242,96 @@ font-family: "Palatino Linotype", serif;
     
 const questions = [
   {
-    question: "What is recursion in computer programming?",
-    options: ["A) A function calling itself", "B) A loop inside a function", "C) A function calling another function", "D) A nested loop"],
-    answer: "A) A function calling itself",
+    question: "What is Breadth-First Search (BFS)?",
+    options: ["A) A graph traversal algorithm", "B) A sorting algorithm", "C) An encryption algorithm", "D) A recursive function"],
+    answer: "A) A graph traversal algorithm",
     timer: 30
   },
   {
-    question: "What is the base case in recursion?",
-    options: ["A) The condition for the loop to end", "B) The starting point of the function", "C) The condition where the function stops calling itself", "D) The default value of the function"],
-    answer: "C) The condition where the function stops calling itself",
+    question: "In BFS, which data structure is typically used to store the nodes?",
+    options: ["A) Stack", "B) Queue", "C) Heap", "D) Linked List"],
+    answer: "B) Queue",
     timer: 30
   },
   {
-    question: "Which of the following is an example of a recursive function?",
-    options: ["A) function factorial(n) { if (n <= 1) return 1; return n * factorial(n - 1); }", "B) function sum(a, b) { return a + b; }", "C) function multiply(a, b) { return a * b; }", "D) function loop(n) { for (let i = 0; i < n; i++) { console.log(i); } }"],
-    answer: "A) function factorial(n) { if (n <= 1) return 1; return n * factorial(n - 1); }",
+    question: "What is the main characteristic of BFS?",
+    options: ["A) It uses a stack for traversal", "B) It explores neighbors before children", "C) It uses priority for node selection", "D) It only works on trees"],
+    answer: "B) It explores neighbors before children",
     timer: 30
   },
   {
-    question: "What is the purpose of the base case in a recursive function?",
-    options: ["A) To initialize variables", "B) To perform the recursive call", "C) To terminate the recursive calls", "D) To print the result"],
-    answer: "C) To terminate the recursive calls",
+    question: "What is the time complexity of BFS on a graph with V vertices and E edges?",
+    options: ["A) O(V)", "B) O(E)", "C) O(V + E)", "D) O(log V)"],
+    answer: "C) O(V + E)",
     timer: 30
   },
   {
-    question: "Which of the following problems can be solved using recursion?",
-    options: ["A) Factorial of a number", "B) Finding the nth Fibonacci number", "C) Tower of Hanoi", "D) All of the above"],
-    answer: "D) All of the above",
+    question: "In BFS, which vertex is visited first?",
+    options: ["A) Vertex with the smallest value", "B) Vertex with the largest value", "C) Starting vertex", "D) Random vertex"],
+    answer: "C) Starting vertex",
     timer: 30
   },
   {
-    question: "What is the output of the following code: function factorial(n) { if (n <= 1) return 1; return n * factorial(n - 1); } factorial(5);",
-    options: ["A) 24", "B) 120", "C) 720", "D) 6"],
-    answer: "B) 120",
+    question: "What happens if BFS is applied to a disconnected graph?",
+    options: ["A) It will not terminate", "B) It will visit all vertices", "C) It will visit only some vertices", "D) It will cause a stack overflow"],
+    answer: "B) It will visit all vertices",
     timer: 30
   },
   {
-    question: "In the context of recursion, what is a stack overflow?",
-    options: ["A) When the recursion doesn't terminate", "B) When the recursion runs too quickly", "C) When there are too many recursive calls and the stack memory is exhausted", "D) When the base case is not defined"],
-    answer: "C) When there are too many recursive calls and the stack memory is exhausted",
+    question: "Which traversal strategy does BFS follow?",
+    options: ["A) Depth-first", "B) Breadth-first", "C) Pre-order", "D) In-order"],
+    answer: "B) Breadth-first",
     timer: 30
   },
   {
-    question: "What is the result of calling the following function: function fibonacci(n) { if (n <= 1) return n; return fibonacci(n - 1) + fibonacci(n - 2); } fibonacci(4);",
-    options: ["A) 1", "B) 2", "C) 3", "D) 5"],
-    answer: "C) 3",
+    question: "What is the primary advantage of BFS over DFS?",
+    options: ["A) It uses less memory", "B) It finds the shortest path in an unweighted graph", "C) It is faster for large graphs", "D) It always finds the goal node"],
+    answer: "B) It finds the shortest path in an unweighted graph",
     timer: 30
   },
   {
-    question: "Which of the following is true about recursion?",
-    options: ["A) It can sometimes lead to stack overflow", "B) It always uses more memory than iteration", "C) It is never used in practical applications", "D) It is slower than iterative solutions"],
-    answer: "A) It can sometimes lead to stack overflow",
+    question: "Which of the following data structures is NOT suitable for implementing BFS?",
+    options: ["A) Queue", "B) Stack", "C) Linked List", "D) Array"],
+    answer: "B) Stack",
     timer: 30
   },
   {
-    question: "What is tail recursion?",
-    options: ["A) A recursive function where the recursive call is the last operation in the function", "B) A recursive function that never terminates", "C) A recursive function that calls itself more than once", "D) A recursive function with a very large number of recursive calls"],
-    answer: "A) A recursive function where the recursive call is the last operation in the function",
+    question: "What is the purpose of marking vertices as visited in BFS?",
+    options: ["A) To prevent infinite loops", "B) To increase traversal speed", "C) To find the largest vertex", "D) To reduce memory usage"],
+    answer: "A) To prevent infinite loops",
     timer: 30
   },
   {
-    question: "Consider the following function: function countDown(n) { if (n <= 0) { console.log('Done'); return; } console.log(n); countDown(n - 1); } What will be the output of countDown(3)?",
-    options: ["A) 3 2 1 0", "B) 3 2 1 Done", "C) 3 2 1", "D) Done"],
-    answer: "B) 3 2 1 Done",
+    question: "Which of the following problems is BFS commonly used to solve?",
+    options: ["A) Finding strongly connected components", "B) Finding minimum spanning tree", "C) Finding articulation points", "D) Finding shortest path in an unweighted graph"],
+    answer: "D) Finding shortest path in an unweighted graph",
     timer: 30
   },
   {
-    question: "Which of the following is a disadvantage of recursion?",
-    options: ["A) It can be more difficult to understand", "B) It can use more memory due to the call stack", "C) It can be slower for large inputs", "D) All of the above"],
-    answer: "D) All of the above",
+    question: "What is the typical application of BFS?",
+    options: ["A) Sorting elements", "B) Solving linear equations", "C) Pathfinding in games", "D) Image compression"],
+    answer: "C) Pathfinding in games",
     timer: 30
   },
   {
-    question: "In the context of recursion, what is a 'recursive case'?",
-    options: ["A) The case where the function calls itself", "B) The case where the function returns a value", "C) The case where the function terminates", "D) The case where the function throws an error"],
-    answer: "A) The case where the function calls itself",
+    question: "What happens if BFS is applied to a cyclic graph without marking visited nodes?",
+    options: ["A) It will find all cycles", "B) It will not terminate", "C) It will visit each node exactly once", "D) It will visit each edge exactly once"],
+    answer: "B) It will not terminate",
     timer: 30
   },
   {
-    question: "What is the result of calling the following function: function sum(n) { if (n <= 0) return 0; return n + sum(n - 1); } sum(4);",
-    options: ["A) 10", "B) 6", "C) 4", "D) 0"],
-    answer: "A) 10",
+    question: "Which of the following is a requirement for BFS to work correctly?",
+    options: ["A) The graph must be connected", "B) The graph must be cyclic", "C) The graph must be directed", "D) The graph must be acyclic"],
+    answer: "A) The graph must be connected",
     timer: 30
   },
   {
-    question: "Why is it important to define a base case in a recursive function?",
-    options: ["A) To avoid infinite recursion", "B) To ensure the function runs faster", "C) To make the function easier to read", "D) To use less memory"],
-    answer: "A) To avoid infinite recursion",
+    question: "What is the result of applying BFS to a tree?",
+    options: ["A) It will not visit all nodes", "B) It will visit all nodes exactly once", "C) It will visit nodes in a random order", "D) It will visit nodes starting from the largest value"],
+    answer: "B) It will visit all nodes exactly once",
     timer: 30
   }
 ];
-
 
  
 let currentQuestionIndex = 0;
